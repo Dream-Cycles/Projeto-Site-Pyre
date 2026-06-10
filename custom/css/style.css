@@ -1,0 +1,475 @@
+*
+{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Encode Sans", sans-serif;
+
+  background: #F2F3FF;
+}
+
+:root
+{
+    --offset: 0;
+
+    --rotation: 0deg;
+}
+
+h1, h2, h3, h4, h5
+{
+  font-family: 'Geologica', sans-serif;
+}
+
+
+.icone-importante {
+  color: #FF3845;
+
+  font-size: 30px;
+}
+
+/* CABEÇALHO */
+
+.cabecalho .navbar {
+  position: relative;
+
+  z-index: 1;
+
+  background: #1F1510;
+}
+
+.logo {
+  width: 50px;
+}
+
+.hamburger-barras span {
+  min-height: 4.5px;
+  width: 40px;
+
+  background: #FF3845;
+
+  align-items: center;
+}
+
+.pesquisa-form {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 40px;
+
+  transform: translateY(0);
+  transform-origin: center;
+
+  transition: transform 0.3s ease-in-out;
+}
+
+.pesquisa-form.clicked {
+  transform: translateY(190%);
+}
+
+#pesquisa-texto {
+  width: 100%;
+
+  padding: 0 15px;
+
+  box-shadow: 0 2px 5px #a2a3a8;
+}
+
+#pesquisa-texto:focus {
+  outline: none;
+}
+
+#pesquisa-close {
+  width: 70px;
+  height: 100%;
+
+  background: #fff;
+}
+
+/* MENU */
+
+.menu-geral {
+  position: fixed;
+  top: 0;
+
+
+  background: #FF3845;
+  width: 100%;
+  height: 100vh;
+
+  z-index: 2;
+
+  padding: 0 25px;
+
+  left: 100%;
+
+  transition: left 0.3s ease-out;
+}
+
+.menu-geral.menu-clicked {
+  left: 0%;
+}
+
+.menu-close {
+  text-align: end;
+
+  font-size: 20px;
+}
+
+.pyre-logo {
+  width: 250px;
+
+  display: block;
+
+  margin: 0 auto;
+}
+
+.login,
+.links a {
+  text-decoration: none;
+
+  color: #1F1510;
+}
+
+.login i {
+  margin-right: 25px;
+}
+
+.login {
+  font-size: 25px;
+
+  font-weight: 600;
+}
+
+.barra {
+  height: 3px;
+  width: 100%;
+
+  display: block;
+
+  background: #1F1510;
+
+  border-radius: 5px;
+}
+
+.login {
+  text-align: center;
+}
+
+.links {
+  text-align: left;
+}
+
+.links ul {
+  margin: 0 auto;
+  padding: 15px 0;
+
+  list-style: none;
+
+  width: 110px;
+
+  justify-content: space-evenly;
+}
+
+.links li {
+  margin: 0 auto;
+
+  font-size: 20px;
+}
+
+.links i {
+  margin-right: 10px;
+}
+
+.sociais {
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 15px;
+}
+
+.sociais i {
+  font-size: 25px;
+
+  color: #000;
+}
+
+/* PESQUISA (DESKTOP) */
+.botao-pesquisar button
+{
+  border: none;
+  outline: none;
+  background: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  background: #fff;
+  height: 40px;
+}
+
+.botao-pesquisar .icone-importante
+{
+  font-size: 25px;
+}
+
+.desktop-pesquisa-form input
+{
+  border: none;
+  font: inherit;
+
+  background: #fff;
+  height: 40px;
+}
+
+.desktop-pesquisa-form input:focus
+{
+  border: none;
+  outline: none;
+}
+
+/* BANNER */
+
+.banner-img
+{
+  width: 100%;
+
+  position: relative;
+}
+
+.banner-jogo::after
+{
+  content: '';
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 150px;
+
+  background: #1F1510;
+
+  z-index: 1;
+
+  top: 83%;
+  left: 0;
+}
+
+.carousel-caption
+{
+  z-index: 2;
+
+  top: 82%;
+
+  display: none;
+}
+.carousel-caption h3
+{
+  color: #FF3845;
+
+  text-transform: uppercase;
+
+  font-size: 48px;
+
+  font-weight: 600;
+}
+
+.desconto
+{
+  display: none;
+
+  position: relative;
+  color: #F2F3FF;
+  z-index: 3;
+
+  right: 0;
+
+  background: #FF3845;
+
+  height: 25px;
+  width: 200px;
+
+  text-align: center;
+}
+.desconto p
+{
+  font-family: 'Geologica', sans-serif;
+}
+
+/* DESTAQUES */
+
+.preview
+{
+    position: relative;
+}
+
+.card-preview
+{
+
+    position: relative;
+    left: 0;
+    top: 0;
+
+    background: linear-gradient(0deg,rgba(31, 21, 16, 1) 71%, rgba(255, 255, 255, 0) 72%);
+
+    transition: left 0.5s ease-in-out, top 0.3s ease-in, opacity 0.3s ease-in;
+
+    z-index: 4;
+
+    width: 250px;
+}
+
+.card-preview h3
+{
+  height: 70px;
+
+  color: #FF3845;
+}
+
+.card-preview p
+{
+  color: #F2F3FF;
+}
+
+.cd-img
+{ 
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    border-radius: 100%;
+
+    transform: rotate(var(--rotation));
+
+    object-fit: cover;
+
+    z-index: 3;
+}
+
+.cd-container::after
+{
+  content: '';
+  position: absolute;
+  width: 255px;
+  height: 255px;
+
+  border-radius: 100%;
+
+  left: 0;
+
+  background: #1F1510;
+
+  z-index: 2;
+}
+
+.card-preview.hovered
+{
+
+    background-color: #FF3845;
+
+    left: var(--offset);
+
+    pointer-events: none;
+}
+
+.card-preview.not-hovered
+{
+    top: 20px;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.preview-video
+{
+    max-width: 864px;
+
+    position: absolute;
+
+    opacity: 0;
+
+    left: 26%;
+    top: 25%;
+
+    transition: top 0.4s ease-in, opacity 0.4s ease-in-out;
+
+    z-index: 0;
+}
+
+.overlay
+{   
+    position: absolute;
+
+    display: block;
+
+    width: 100%;
+    height: 500px;
+
+    opacity: 0%;
+
+    top: 0;
+    left: 0;
+
+    z-index: 1;
+}
+
+.overlay.video-show
+{
+    display: none;
+}
+
+.preview-video.video-show
+{
+    display: block;
+
+    opacity: 1;
+
+    top: 0;
+}
+
+
+
+
+
+
+@media (min-width: 768px)
+{
+  /* CABECALHO */
+
+  #botao-pesquisa,
+  .pesquisa-form
+  {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px)
+{
+  .menu-geral
+  {
+    width: 30%;
+  }
+
+  .menu-geral.menu-clicked 
+  {
+    left: 70%;
+  }
+
+  /* BANNER */
+
+  .banner-jogo::after
+  {
+    display: block;
+  }
+
+  .carousel-caption
+  {
+    display: block;
+  }
+
+  .desconto
+  {
+    display: block;
+  }
+}

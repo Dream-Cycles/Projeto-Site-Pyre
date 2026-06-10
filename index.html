@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pyre</title>
+
+  <meta name="author" content="Bruno Tomaz" />
+
+  <!-- ICONE -->
+  <link rel="icon" href="assets/img/Pyre Logo1.png" />
+
+  <!-- FONTES -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&family=Geologica:wght,CRSV@100..900,0&display=swap"
+    rel="stylesheet" />
+
+  <!-- FONTAWESOME ICONS -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- BOOTSTRAP ICONS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+
+  <!-- BOOTSTRAP -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="/custom/css/style.css" />
+</head>
+
+<body>
+  <!-- CABEÇALHO -->
+
+  <header class="cabecalho">
+    <div class="navbar navbar-expand">
+      <div class="container-fluid px-3 d-flex justify-content-center">
+        <div class="row w-100">
+          <!-- LOGO -->
+
+          <div class="col-4 col-md-2">
+            <div class="navbar-brand">
+              <a href="index.html"><img src="/assets/img/Pyre Logo1.png" alt="Logo da Pyre" class="logo" /></a>
+            </div>
+          </div>
+
+          <div class="col-4 col-md-8 d-flex justify-content-center">
+            <!-- BOTÃO DE PESQUISA -->
+
+            <button id="botao-pesquisa" class="btn" type="button" data-bs-toggle="collapse"
+              data-bs-target="#barra-pesquisa">
+              <i class="fa-solid fa-magnifying-glass icone-importante"></i>
+            </button>
+
+            <!-- FORM DE PESQUISA (DESKTOP) -->
+
+            <div class="row w-100 d-none d-md-flex">
+              <div class="col-1 p-0">
+                <div class="botao-pesquisar h-100 d-flex align-items-center justify-content-end">
+                  <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass icone-importante"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-11 p-0">
+                <form class="desktop-pesquisa-form h-100 d-flex align-items-center" action="#">
+                  <input type="text" name="pesquisa" class="pesquisa-input w-100" />
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- MENU-HAMBURGER -->
+
+          <div class="col-4 col-md-2">
+            <nav role="navigation" class="menu-hamburger h-100 w-100">
+              <div class="menu-toggle h-100 w-100">
+                <span class="hamburger-barras d-flex flex-column gap-2 h-100 w-100 justify-content-center">
+                  <span class="d-block mx-auto"></span>
+                  <span class="d-block mx-auto"></span>
+                  <span class="d-block mx-auto"></span>
+                </span>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM DE PESQUISA (MOBILE) -->
+
+    <form class="pesquisa-form d-flex">
+      <input type="text" id="pesquisa-texto" class="h-100 border-0" />
+    </form>
+
+    <!-- MENU -->
+
+    <div class="menu-geral">
+      <div class="menu-close py-4">
+        <i class="fa-solid fa-x"></i>
+      </div>
+
+      <img src="/assets/img/Pyre-Black.png" class="pyre-logo" alt="Logo da Pyre" />
+
+      <a href="#" class="login">
+        <p><i class="bi bi-person-circle text-black"></i> Faça Login</p>
+
+        <span class="barra"></span>
+      </a>
+
+      <nav class="links">
+        <ul>
+          <li>
+            <a href="#"> <i class="fa-solid fa-cart-shopping"></i>Carrinho</a>
+          </li>
+          <li>
+            <a href="#"> <i class="fa-solid fa-gamepad"></i>Jogos</a>
+          </li>
+          <li>
+            <a href="#"> <i class="fa-solid fa-wrench"></i>Suporte</a>
+          </li>
+          <li>
+            <a href="#"> <i class="fa-solid fa-question"></i>Sobre</a>
+          </li>
+          <li>
+            <a href="#"> <i class="fa-solid fa-people-group"></i>Equipe</a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="sociais d-flex">
+        <ul class="li m-0 p-0">
+          <a href="https://www.x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        </ul>
+        <ul class="li m-0 p-0">
+          <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </ul>
+        <ul class="li m-0 p-0">
+          <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </ul>
+        <ul class="li m-0 p-0">
+          <a href="https://www.twitch.com" target="_blank"><i class="fa-brands fa-twitch"></i></a>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- FIM CABEÇALHO -->
+
+  <!-- BANNER -->
+
+  <section class="banner">
+    <div id="carrossel-baner" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-inner">
+        <div class="carousel-item active overflow-hidden">
+
+          
+          <div class="banner-jogo d-flex justify-content-center">
+
+            <img src="assets/img/Elden Ring Banner.png" class="d-block banner-img" alt="Banner do jogo 'Elden Ring'"/>
+
+          </div>
+
+          <div class="carousel-caption">
+
+            <h3>Elden Ring</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+          </div>
+
+          <div class="desconto">
+
+            <p>067% DE DESCONTO</p>
+
+          </div>
+          
+
+        </div>
+        <div class="carousel-item active overflow-hidden">
+
+          
+          <div class="banner-jogo d-flex justify-content-center">
+
+            <img src="assets/img/Red Dead Banner.jpg" class="d-block banner-img" alt="Banner do jogo 'Elden Ring'"/>
+
+          </div>
+
+          <div class="carousel-caption">
+
+            <h3>Red Dead Redemption</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+          </div>
+
+          <div class="desconto">
+
+            <p>067% DE DESCONTO</p>
+
+          </div>
+          
+
+          </div>
+        <div class="carousel-item active overflow-hidden">
+
+          
+          <div class="banner-jogo d-flex justify-content-center">
+
+            <img src="assets/img/Resident Evil Banner.png" class="d-block banner-img" alt="Banner do jogo 'Elden Ring'"/>
+
+          </div>
+
+          <div class="carousel-caption">
+
+            <h3>Resident Evil Requiem</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+
+          </div>
+
+          <div class="desconto">
+
+            <p>067% DE DESCONTO</p>
+
+          </div>
+
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carrossel-baner" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carrossel-baner" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- SIMPLE CARD -->
+
+  <section class="preview mt-5">
+
+        <div class="container d-flex justify-content-evenly text-center">
+
+            <div class="card-preview">
+
+                <img class="cd-img" src="assets/img/Monster Hunter W.png" alt="">
+
+                <h3 class="mb-2">Monster Hunter: <br> Wilds</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, excepturi.</p>
+                <span class="detalhe"><p>89% DE DESCONTO</p></span>
+
+            </div>
+
+            <div class="card-preview">
+
+                <img class="cd-img" src="assets/img/Pragmata.png" alt="">
+
+                <h3 class="mb-2">Pragmata</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, excepturi.</p>
+                <span class="detalhe"><p>MAIS VENDIDO</p></span>
+
+            </div>
+
+            <div class="card-preview">
+
+              <div class="cd-container">
+
+                <img class="cd-img" src="assets/img/GOWLaufey.png" alt="">
+
+              </div>
+
+                
+
+                <h3 class="mb-2">God of War <br> Laufey</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, excepturi.</p>
+                <span class="detalhe"><p>PRÉ-VENDA</p></span>
+            </div>
+
+        </div>
+        
+        <div class="preview">
+
+            <video src="/img/videopreview.mp4" controls muted class="preview-video"></video>
+
+        </div>
+
+        <div class="overlay">
+
+
+
+        </div>
+
+    </section>
+
+  <!-- BOOTSTRAP JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+  <!-- JAVASCRIPT -->
+
+  <script src="/custom/javascript/script.js"></script>
+</body>
+
+</html>
