@@ -1,28 +1,16 @@
 // VARIÁVEIS
 
-// BOTÃO DE PESQUISA
-const pesquisa = document.getElementById("botao-pesquisa");
-const pesquisaText = document.getElementById("pesquisa-texto");
-const pesquisaClose = document.getElementById("pesquisa-close");
-const pesquisaForm = document.querySelector(".pesquisa-form");
-
 // MENU-HAMBURGER
-const menuHamburger = document.querySelector(".menu-hamburger");
 const menuGeral = document.querySelector(".menu-geral");
-const menuClose = document.querySelector(".menu-close");
 
 // HTML VIDEO
 const videoSrc = document.querySelector(".preview-video");
 
 // PREVIEWS
 
-const highlight = document.querySelector(".preview");
 const highlightCard = document.querySelectorAll(".card-preview");
 const videoPreview = document.querySelector(".preview-video");
 const overlay = document.querySelector(".overlay");
-
-const cdImg = document.querySelector(".cd-img");
-const cdAnim = cdImg.getAnimations()[0];
 
 const cdContainer = document.querySelectorAll(".cd-container");
 
@@ -30,6 +18,17 @@ let selOffset = 0;
 
 // VARIÁVEIS DO PREVIEW
 let cdContainerRect = cdContainer[0].getBoundingClientRect();
+
+let rotation = 0;
+let rotationAmount = 0.1;
+
+const selectionRotation = new Array(cdContainer.length).fill(null);
+const ultimoFrameSel = new Array(cdContainer.length).fill(null);
+let progresso = 0.5;
+
+let ultimoFrame = null;
+let speedId;
+const cdSelectionId = new Array(cdContainer.length).fill(null);
 
 let selSize = cdContainerRect.width + 6;
 
@@ -41,109 +40,139 @@ let hovered = false;
 let cardAtual;
 
 // ABRE A BARRA DE PESQUISA (MOBILE ONLY)
-pesquisa.addEventListener("click", function () {
-    pesquisaForm.classList.toggle("clicked");
-    pesquisaText.focus();
-});
+document
+    .getElementById("botao-pesquisa")
+    .addEventListener("click", function () {
+        document.querySelector(".pesquisa-form").classList.toggle("clicked");
+        document.getElementById("pesquisa-texto").focus();
+    });
 
 // ABRE O MENU QUANDO FOR CLICADO
 
-menuHamburger.addEventListener("click", function () {
-    menuGeral.classList.add("menu-clicked");
-});
-menuClose.addEventListener("click", function () {
+document
+    .querySelector(".menu-hamburger")
+    .addEventListener("click", function () {
+        menuGeral.classList.add("menu-clicked");
+    });
+document.querySelector(".menu-close").addEventListener("click", function () {
     menuGeral.classList.remove("menu-clicked");
 });
 
 // AÇÕES DO PREVIEW
 
 // MOVIMENTAÇÃO COM O HOVER
-highlight.addEventListener("mousemove", () => {
-    [...highlightCard].forEach((card, index) => {
-        let timer;
-        let videoTimer;
+[...highlightCard].forEach((card, index) => {
+    let timer;
+    let videoTimer;
 
-        // ACELERAÇÃO DO DISCO
-        rotationIncrement = 4;
+    // ACELERAÇÃO DO DISCO
+    rotationIncrement = 4;
 
-        card.addEventListener("mouseenter", () => {
-            if (!hovered) {
-                
+    card.addEventListener("mouseenter", () => {
+        if (!hovered) {
+            cardAtual = index;
 
-                timer = setTimeout(() => {
-                    // COLETA DE DADOS PARA FAZER A MOVIMENTAÇÃO PARA A ESQUERDA
-                    let ogLeft = card.getBoundingClientRect().left;
+            cancelAnimationFrame(cdSelectionId[cardAtual]);
+            ultimoFrameSel[cardAtual] = null;
+
+            cdSelectionId[cardAtual] = requestAnimationFrame((tempo) =>
+                cdSelection(tempo, cardAtual),
+            );
+
+            hovered = true;
+            progresso = 50;
+
+            timer = setTimeout(() => {
+                // COLETA DE DADOS PARA FAZER A MOVIMENTAÇÃO PARA A ESQUERDA
+                let ogLeft = card.getBoundingClientRect().left;
+
+                document.documentElement.style.setProperty(
+                    "--offset",
+                    `-${ogLeft - 50}px`,
+                );
+
+                // MOVE O CARD PARA A ESQUERDA E ESCONDE OS OUTROS CARDS
+                card.classList.add("hovered");
+
+                [...highlightCard]
+                    .filter((outro) => !outro.classList.contains("hovered"))
+                    .forEach((outro) => outro.classList.add("not-hovered"));
+
+                // CANCELANIMATION PARA EVITAR LOOPS DUPLICADOS
+                cancelAnimationFrame(speedId);
+                ultimoFrame[cardAtual] = null;
+                speedId = requestAnimationFrame(speedIncrease);
+
+                // DELAY PARA O VÍDEO
+                videoTimer = setTimeout(() => {
+                    // SELECIONA O VÍDEO
+                    switch (cardAtual) {
+                        case 0:
+                            videoPreview.src = "/assets/vid/MH Wilds Preview.mp4";
+                            break;
+
+                        case 1:
+                            videoPreview.src = "/assets/vid/Pragmata Preview.mp4";
+                            break;
+
+                        default:
+                            videoPreview.src = "/assets/vid/Gow Laufey Preview.mp4";
+                            break;
+                    }
+
+                    // ESPAÇO ENTRE O VÍDEO E O CARD
+
+                    vidLeft = card.getBoundingClientRect().right;
+
+                    console.log(vidLeft);
 
                     document.documentElement.style.setProperty(
-                        "--offset",
-                        `-${ogLeft - 50}px`,
+                        "--videoLeft",
+                        `${vidLeft + 25}px`,
                     );
 
-                    // MOVE O CARD PARA A ESQUERDA E ESCONDE OS OUTROS CARDS
-                    card.classList.add("hovered");
+                    videoPreview.classList.add("video-show");
+                    overlay.classList.add("video-show");
 
-                    [...highlightCard]
-                        .filter((outro) => !outro.classList.contains("hovered"))
-                        .forEach((outro) => outro.classList.add("not-hovered"));
+                    videoPreview.play();
+                }, 1000);
+            }, 2000);
+        }
+    });
 
-                    // DELAY PARA O VÍDEO
-                    videoTimer = setTimeout(() => {
+    // RETORNA AO ESTADO ORIGINAL
+    card.addEventListener("mouseleave", () => {
+        clearTimeout(timer);
 
-                        // SELECIONA O VÍDEO
-                        switch (index)
-                        {
-                            case 0:
-                                videoPreview.src = "/assets/vid/MH Wilds Preview.mp4";
-                                break;
-                            
-                            case 1:
-                                videoPreview.src = "/assets/vid/Pragmata Preview.mp4";
-                                break;
+        cardAtual = index;
+        cancelAnimationFrame(cdSelectionId[cardAtual]);
 
-                            default:
-                                videoPreview.src = "/assets/vid/Gow Laufey Preview.mp4"
-                                break;
-                        }
+        ultimoFrameSel[cardAtual] = null;
 
-                        // ESPAÇO ENTRE O VÍDEO E O CARD
+        cdSelectionId[cardAtual] = requestAnimationFrame((tempo) =>
+            cdSelection(tempo, cardAtual),
+        );
+    });
+    document.querySelector(".preview").addEventListener("mouseleave", () => {
+        card.classList.remove("hovered");
+        card.classList.remove("not-hovered");
+        videoPreview.classList.remove("video-show");
+        overlay.classList.remove("video-show");
 
-                        vidLeft = card.getBoundingClientRect().right;
+        videoPreview.pause();
+        videoPreview.currentTime = 0;
 
-                        console.log(vidLeft)
+        clearTimeout(videoTimer);
 
-                        document.documentElement.style.setProperty (
-                            "--videoLeft", `${vidLeft + 25}px`  
-                        );
+        hovered = false;
 
-                        videoPreview.classList.add("video-show");
-                        overlay.classList.add("video-show");
+        progresso = 200;
 
-                        videoPreview.play();
-                    }, 1000);
-                }, 2000);
-            }
-        });
+        cancelAnimationFrame(speedId);
 
-        // RETORNA AO ESTADO ORIGINAL
-        card.addEventListener("mouseleave", () => {
-            clearTimeout(timer);
-        });
+        ultimoFrame = null;
 
-        highlight.addEventListener("mouseleave", () => {
-            card.classList.remove("hovered");
-            card.classList.remove("not-hovered");
-            videoPreview.classList.remove("video-show");
-            overlay.classList.remove("video-show");
-
-            videoPreview.pause();
-            videoPreview.currentTime = 0;
-
-            clearTimeout(videoTimer);
-
-            hovered = false;
-
-            progresso = 200;
-        });
+        speedId = requestAnimationFrame(speedIncrease);
     });
 });
 
@@ -162,16 +191,13 @@ observer.observe(cdContainer[0]);
 
 // MANTER A ALTURA DO VÍDEO IGUAL AO CONTAINER DO CARD
 
-document.documentElement.style.setProperty ("--videoSize", `${vidSize}px`)
+document.documentElement.style.setProperty("--videoSize", `${vidSize}px`);
 
 const observerVideo = new ResizeObserver((objetos) => {
     highlightCard[0] = objetos[0].contentRect;
     vidSize = highlightCard.height;
 
-    document.documentElement.style.setProperty(
-        "--videoSize", 
-        `${vidSize}px`
-    );
+    document.documentElement.style.setProperty("--videoSize", `${vidSize}px`);
 });
 
 // CENTRALIZAR AFTER DO SELECT
@@ -182,3 +208,81 @@ document.documentElement.style.setProperty(
     "--seloffset",
     `${selOffset * -1}px`,
 );
+
+// FUNÇÕES
+// RODAR IMAGEM
+
+function speedIncrease(tempo) {
+    // CALCULO PARA CONSISTÊNCIA ENTRE FRAMERATES
+
+    if (ultimoFrame == null) ultimoFrame = tempo;
+
+    const diferenca = (tempo - ultimoFrame) / 1000;
+
+    ultimoFrame = tempo;
+
+    switch (hovered) {
+        case true:
+            rotationAmount = Math.min(
+                20,
+                rotationAmount + rotationIncrement * diferenca,
+            );
+            break;
+
+        case false:
+            rotationAmount = Math.max(
+                0.1,
+                rotationAmount - rotationIncrement * diferenca,
+            );
+            break;
+    }
+    rotation += rotationAmount;
+
+    document.documentElement.style.setProperty(
+        "--rotation",
+        `${rotation % 360}deg`,
+    );
+
+    speedId = requestAnimationFrame(speedIncrease);
+}
+requestAnimationFrame(speedIncrease);
+
+// SELEÇÃO
+
+function cdSelection(tempo, selCard) {
+    if (ultimoFrameSel[selCard] == null) ultimoFrameSel[selCard] = tempo;
+
+    const diferenca = (tempo - ultimoFrameSel[selCard]) / 1000;
+
+    ultimoFrameSel[selCard] = tempo;
+
+    switch (hovered) {
+        case true:
+            selectionRotation[selCard] = Math.min(
+                100,
+                selectionRotation[selCard] + progresso * diferenca,
+            );
+            break;
+
+        case false:
+            selectionRotation[selCard] = Math.max(
+                0,
+                selectionRotation[selCard] - progresso * diferenca,
+            );
+            break;
+    }
+
+    cdContainer[selCard].style.setProperty(
+        "--progressoBarra",
+        `${selectionRotation[selCard]}%`,
+    );
+
+    if (
+        (!hovered && selectionRotation[selCard] > 0) ||
+        (hovered && selectionRotation[selCard] <= 100)
+    ) {
+        cdSelectionId[selCard] = requestAnimationFrame((tempo) =>
+            cdSelection(tempo, selCard),
+        );
+    }
+}
