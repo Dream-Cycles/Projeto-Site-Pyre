@@ -36,6 +36,7 @@ let vidLeft = 0;
 let vidSize = highlightCard[0].getBoundingClientRect().height;
 
 let hovered = false;
+let videoHover = false;
 
 let cardAtual;
 
@@ -83,6 +84,8 @@ document.querySelector(".menu-close").addEventListener("click", function () {
             progresso = 50;
 
             timer = setTimeout(() => {
+                videoHover = true;
+
                 // COLETA DE DADOS PARA FAZER A MOVIMENTAÇÃO PARA A ESQUERDA
                 let ogLeft = card.getBoundingClientRect().left;
 
@@ -142,6 +145,8 @@ document.querySelector(".menu-close").addEventListener("click", function () {
 
     // RETORNA AO ESTADO ORIGINAL
     card.addEventListener("mouseleave", () => {
+        hovered = false;
+
         clearTimeout(timer);
 
         cardAtual = index;
@@ -165,6 +170,7 @@ document.querySelector(".menu-close").addEventListener("click", function () {
         clearTimeout(videoTimer);
 
         hovered = false;
+        videoHover = false;
 
         progresso = 200;
 
@@ -221,21 +227,21 @@ function speedIncrease(tempo) {
 
     ultimoFrame = tempo;
 
-    switch (hovered) {
-        case true:
-            rotationAmount = Math.min(
+    if (hovered || videoHover)
+    {
+        rotationAmount = Math.min(
                 20,
                 rotationAmount + rotationIncrement * diferenca,
             );
-            break;
-
-        case false:
-            rotationAmount = Math.max(
+    }
+    else
+    {
+        rotationAmount = Math.max(
                 0.1,
                 rotationAmount - rotationIncrement * diferenca,
             );
-            break;
     }
+
     rotation += rotationAmount;
 
     document.documentElement.style.setProperty(
@@ -256,20 +262,19 @@ function cdSelection(tempo, selCard) {
 
     ultimoFrameSel[selCard] = tempo;
 
-    switch (hovered) {
-        case true:
-            selectionRotation[selCard] = Math.min(
+    if (hovered || videoHover)
+    {
+        selectionRotation[selCard] = Math.min(
                 100,
                 selectionRotation[selCard] + progresso * diferenca,
             );
-            break;
-
-        case false:
-            selectionRotation[selCard] = Math.max(
+    }
+    else
+    {
+        selectionRotation[selCard] = Math.max(
                 0,
                 selectionRotation[selCard] - progresso * diferenca,
             );
-            break;
     }
 
     cdContainer[selCard].style.setProperty(
