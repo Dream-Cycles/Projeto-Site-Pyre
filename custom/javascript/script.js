@@ -20,12 +20,26 @@ const overlay = document.querySelector(".overlay");
 
 const cdImg = document.querySelector(".cd-img");
 
+const cdContainer = document.querySelector(".cd-container")
+
+let cdContainerRect = cdContainer.getBoundingClientRect();
+let selSize = cdContainerRect.width + 6;
+
+
+let selOffset = 0;
+
 // VARIÁVEIS DO PREVIEW
 let rotation = 0;
 let rotationAmount = 0.1;
 
+
+let selectionRotation = 0;
+let ultimoFrameSel = null;
+let progresso = 50;
+
 let ultimoFrame = null;
 let speedId;
+let cdSelectionId
 
 let hovered = false;
 
@@ -53,7 +67,6 @@ menuClose.addEventListener('click', function() {
 
 // AÇÕES DO PREVIEW
 
-
 // MOVIMENTAÇÃO COM O HOVER
 highlight.addEventListener("mousemove", () => {
     [...highlightCard].forEach((card) => {
@@ -65,6 +78,14 @@ highlight.addEventListener("mousemove", () => {
 
         card.addEventListener("mouseenter", () => {
             if (!hovered) {
+
+                cancelAnimationFrame(cdSelectionId)
+                ultimoFrameSel = null;
+                cdSelectionId = requestAnimationFrame(cdSelection);
+
+                hovered = true;
+                progresso = 50;
+
                 timer = setTimeout(() => {
                     
                     // COLETA DE DADOS PARA FAZER A MOVIMENTAÇÃO PARA A ESQUERDA
@@ -87,7 +108,7 @@ highlight.addEventListener("mousemove", () => {
                     ultimoFrame = null;
                     speedId = requestAnimationFrame(speedIncrease);
 
-                    hovered = true;
+                    
 
                     // DELAY PARA O VÍDEO
                     videoTimer = setTimeout(() => {
@@ -118,13 +139,56 @@ highlight.addEventListener("mousemove", () => {
             clearTimeout(videoTimer)
 
             hovered = false;
+
+            progresso = 200;
             
             cancelAnimationFrame(speedId);
+            cancelAnimationFrame(cdSelectionId);
+
+
             ultimoFrame = null;
+            ultimoFrameSel = null;
+
+
             speedId = requestAnimationFrame(speedIncrease);
+            cdSelectionId = requestAnimationFrame(cdSelection);
+            
         });
     });
 });
+
+// DEFINIR O TAMANHO DO SELECT
+
+
+document.documentElement.style.setProperty (
+    "--selSize",
+    `${selSize}px`
+)
+
+const observer = new ResizeObserver ((objetos) => {
+    cdContainerRect = objetos[0].contentRect;
+    selSize = cdContainerRect.width + 6;
+
+    document.documentElement.style.setProperty (
+    "--selSize",
+    `${selSize}px`
+    )
+
+})
+
+observer.observe(cdContainer);
+
+// CENTRALIZAR SELECT
+
+selOffset = (selSize - cdContainerRect.width) / 2;
+
+document.documentElement.style.setProperty (
+    "--seloffset",
+    `${selOffset * - 1}px`
+);
+
+
+// FUNÇÕES
 
 
 // RODAR IMAGEM
@@ -134,7 +198,7 @@ function speedIncrease(tempo)
     // CALCULO PARA CONSISTÊNCIA ENTRE FRAMERATES
     if (ultimoFrame == null) ultimoFrame = tempo;
 
-    let diferenca = (tempo - ultimoFrame) / 1000;
+    const diferenca = (tempo - ultimoFrame) / 1000;
 
     ultimoFrame = tempo;
 
@@ -167,6 +231,39 @@ function cdRotate() {
 }
 
 requestAnimationFrame(cdRotate);
+
+// SELEÇÃO
+
+function cdSelection(tempo) {
+
+  if (ultimoFrameSel == null) ultimoFrameSel = tempo;
+
+  const diferenca = (tempo - ultimoFrameSel) / 1000;
+
+  ultimoFrameSel = tempo;
+
+  switch (hovered)
+    {
+        case true:
+            selectionRotation = Math.min ( 100, selectionRotation + progresso * diferenca);
+            break;
+        
+        case false:
+            selectionRotation = Math.max ( 0, selectionRotation - progresso * diferenca);
+            break;
+    }
+
+  document.documentElement.style.setProperty(
+      "--progresso",
+      `${selectionRotation}%`
+  );
+
+  cdSelectionId = requestAnimationFrame(cdSelection)
+}
+
+
+
+
 
 
 

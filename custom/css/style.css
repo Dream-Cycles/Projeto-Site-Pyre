@@ -14,6 +14,12 @@ body {
     --offset: 0;
 
     --rotation: 0deg;
+
+    --progresso: 0;
+
+    --seloffset: 0;
+
+    --selSize: 0;
 }
 
 h1, h2, h3, h4, h5
@@ -346,26 +352,32 @@ h1, h2, h3, h4, h5
     z-index: 3;
 }
 
+.cd-container
+{
+  position: relative;
+}
+
 .cd-container::after
 {
   content: '';
   position: absolute;
-  width: 255px;
-  height: 255px;
+  width: var(--selSize);
+  height: var(--selSize);
 
   border-radius: 100%;
 
-  left: 0;
+  left: var(--seloffset);
+  top: var(--seloffset);
 
-  background: #1F1510;
+  background-size: 100% 100%;
+  background-position: 0px 0px;
+  background-image: conic-gradient(from 0deg at 50% 50%,#FF3845 var(--progresso),#1F1510 var(--progresso));
 
   z-index: 2;
 }
 
 .card-preview.hovered
 {
-
-    background-color: #FF3845;
 
     left: var(--offset);
 
@@ -383,14 +395,14 @@ h1, h2, h3, h4, h5
 
 .preview-video
 {
-    max-width: 864px;
+    max-width: 800px;
 
     position: absolute;
 
     opacity: 0;
 
     left: 26%;
-    top: 25%;
+    top: 70px;
 
     transition: top 0.4s ease-in, opacity 0.4s ease-in-out;
 
@@ -425,7 +437,7 @@ h1, h2, h3, h4, h5
 
     opacity: 1;
 
-    top: 0;
+    top: 5px;
 }
 
 
