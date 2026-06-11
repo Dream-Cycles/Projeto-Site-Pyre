@@ -22,7 +22,6 @@ const videoPreview = document.querySelector(".preview-video");
 const overlay = document.querySelector(".overlay");
 
 const cdImg = document.querySelector(".cd-img");
-const cdAnim = cdImg.getAnimations()[0];
 
 const cdContainer = document.querySelectorAll(".cd-container");
 
@@ -30,6 +29,17 @@ let selOffset = 0;
 
 // VARIÁVEIS DO PREVIEW
 let cdContainerRect = cdContainer[0].getBoundingClientRect();
+
+let rotation = 0;
+let rotationAmount = 0.1;
+
+let selectionRotation = 0;
+const ultimoFrameSel = new Array(cdContainer.length).fill(null);
+let progresso = 50;
+
+let ultimoFrame = null;
+let speedId;
+const cdSelectionId = new Array(cdContainer.length).fill(null);
 
 let selSize = cdContainerRect.width + 6;
 
@@ -69,6 +79,13 @@ highlight.addEventListener("mousemove", () => {
         card.addEventListener("mouseenter", () => {
             if (!hovered) {
                 
+                cancelAnimationFrame(cdSelectionId);
+                ultimoFrameSel[index] = null;
+
+                cdSelectionId[index] = requestAnimationFrame((tempo) => cdSelection(tempo, index));
+
+                hovered = true;
+                progresso = 50;
 
                 timer = setTimeout(() => {
                     // COLETA DE DADOS PARA FAZER A MOVIMENTAÇÃO PARA A ESQUERDA
@@ -85,6 +102,11 @@ highlight.addEventListener("mousemove", () => {
                     [...highlightCard]
                         .filter((outro) => !outro.classList.contains("hovered"))
                         .forEach((outro) => outro.classList.add("not-hovered"));
+
+                    // CANCELANIMATION PARA EVITAR LOOPS DUPLICADOS
+                    cancelAnimationFrame(speedId);
+                    ultimoFrame[index] = null;
+                    speedId = requestAnimationFrame(speedIncrease);
 
                     // DELAY PARA O VÍDEO
                     videoTimer = setTimeout(() => {
@@ -143,6 +165,15 @@ highlight.addEventListener("mousemove", () => {
             hovered = false;
 
             progresso = 200;
+
+            cancelAnimationFrame(speedId);
+            cancelAnimationFrame(cdSelectionId);
+
+            ultimoFrame = null;
+            ultimoFrameSel[index] = null;
+
+            speedId = requestAnimationFrame(speedIncrease);
+            cdSelectionId[index] = requestAnimationFrame((tempo) => cdSelection(tempo, index));
         });
     });
 });
@@ -182,3 +213,77 @@ document.documentElement.style.setProperty(
     "--seloffset",
     `${selOffset * -1}px`,
 );
+
+// FUNÇÕES
+
+// RODAR IMAGEM
+
+function speedIncrease(tempo) {
+    // CALCULO PARA CONSISTÊNCIA ENTRE FRAMERATES
+    if (ultimoFrame == null) ultimoFrame = tempo;
+
+    const diferenca = (tempo - ultimoFrame) / 1000;
+
+    ultimoFrame = tempo;
+
+    switch (hovered) {
+        case true:
+            rotationAmount = Math.min(
+                20,
+                rotationAmount + rotationIncrement * diferenca,
+            );
+            break;
+
+        case false:
+            rotationAmount = Math.max(
+                0.1,
+                rotationAmount - rotationIncrement * diferenca,
+            );
+            break;
+    }
+
+    speedId = requestAnimationFrame(speedIncrease);
+}
+
+function cdRotate() {
+    rotation += rotationAmount;
+
+    document.documentElement.style.setProperty("--rotation", `${rotation}deg`);
+
+    requestAnimationFrame(cdRotate);
+}
+
+requestAnimationFrame(cdRotate);
+
+// SELEÇÃO
+
+function cdSelection(tempo, selCard) {
+    if (ultimoFrameSel[selCard] == null) ultimoFrameSel[selCard] = tempo;
+
+    const diferenca = (tempo - ultimoFrameSel[selCard]) / 1000;
+
+    ultimoFrameSel[selCard] = tempo;
+
+    switch (hovered) {
+        case true:
+            selectionRotation = Math.min(
+                100,
+                selectionRotation + progresso * diferenca,
+            );
+            break;
+
+        case false:
+            selectionRotation = Math.max(
+                0,
+                selectionRotation - progresso * diferenca,
+            );
+            break;
+    }
+
+    cdContainer[selCard].style.setProperty(
+        "--progressoBarra",
+        `${selectionRotation}%`,
+    );
+
+    cdSelectionId[selCard] = requestAnimationFrame((tempo) => cdSelection(tempo, selCard));
+}

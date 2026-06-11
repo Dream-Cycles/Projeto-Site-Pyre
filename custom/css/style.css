@@ -3,6 +3,16 @@
   box-sizing: border-box;
 }
 
+@keyframes cdRotaiton
+{
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 body {
   font-family: "Encode Sans", sans-serif;
 
@@ -20,6 +30,10 @@ body {
     --seloffset: 0;
 
     --selSize: 0;
+
+    --videoSize: 0;
+
+    --videoLeft: 0;
 }
 
 h1, h2, h3, h4, h5
@@ -337,8 +351,16 @@ h1, h2, h3, h4, h5
   color: #F2F3FF;
 }
 
+@property --tmp
+{
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 1;
+}
+
 .cd-img
 { 
+    --tmp: 20;
     position: relative;
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -350,11 +372,21 @@ h1, h2, h3, h4, h5
     object-fit: cover;
 
     z-index: 3;
+
+    animation: cdRotaiton calc(var(--tmp) * 1s) linear infinite;
+
+    transition: --tmp 5s ease;
+}
+.cd-img:hover
+{
+    --tmp: 1;
 }
 
 .cd-container
 {
   position: relative;
+
+  --progressoBarra: 0;
 }
 
 .cd-container::after
@@ -371,7 +403,7 @@ h1, h2, h3, h4, h5
 
   background-size: 100% 100%;
   background-position: 0px 0px;
-  background-image: conic-gradient(from 0deg at 50% 50%,#FF3845 var(--progresso),#1F1510 var(--progresso));
+  background-image: conic-gradient(from 0deg at 50% 50%,#FF3845 var(--progressoBarra),#1F1510 var(--progressoBarra));
 
   z-index: 2;
 }
@@ -395,13 +427,16 @@ h1, h2, h3, h4, h5
 
 .preview-video
 {
-    max-width: 800px;
+    max-width: 1024px;
+    width: 55%;
+
+    height: var(--videoSize);
 
     position: absolute;
 
     opacity: 0;
 
-    left: 26%;
+    left: var(--videoLeft);
     top: 70px;
 
     transition: top 0.4s ease-in, opacity 0.4s ease-in-out;
