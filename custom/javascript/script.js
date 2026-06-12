@@ -227,24 +227,22 @@ function speedIncrease(tempo) {
 
     ultimoFrame = tempo;
 
-    if (hovered || videoHover)
-    {
+    if (hovered || videoHover) {
         rotationAmount = Math.min(
-                20,
-                rotationAmount + rotationIncrement * diferenca,
-            );
+            20,
+            rotationAmount + rotationIncrement * diferenca,
+        );
     }
-    else
-    {
+    else {
         rotationAmount = Math.max(
-                0.1,
-                rotationAmount - rotationIncrement * diferenca,
-            );
+            0.1,
+            rotationAmount - rotationIncrement * diferenca,
+        );
     }
 
     rotation += rotationAmount;
 
-    document.documentElement.style.setProperty(
+    document.querySelector('.cd-img').style.setProperty(
         "--rotation",
         `${rotation % 360}deg`,
     );
@@ -262,19 +260,17 @@ function cdSelection(tempo, selCard) {
 
     ultimoFrameSel[selCard] = tempo;
 
-    if (hovered || videoHover)
-    {
+    if (hovered || videoHover) {
         selectionRotation[selCard] = Math.min(
-                100,
-                selectionRotation[selCard] + progresso * diferenca,
-            );
+            100,
+            selectionRotation[selCard] + progresso * diferenca,
+        );
     }
-    else
-    {
+    else {
         selectionRotation[selCard] = Math.max(
-                0,
-                selectionRotation[selCard] - progresso * diferenca,
-            );
+            0,
+            selectionRotation[selCard] - progresso * diferenca,
+        );
     }
 
     cdContainer[selCard].style.setProperty(
