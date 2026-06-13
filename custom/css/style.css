@@ -6,6 +6,10 @@ a {
   text-decoration: none;
 }
 
+html, body {
+  overscroll-behavior-x: none;
+}
+
 @keyframes cdRotaiton {
   from {
     transform: rotate(0deg);
@@ -304,6 +308,9 @@ h5 {
 
 .preview {
   position: relative;
+  padding: 3px 0;
+
+  overflow: hidden;
 }
 
 .card-preview {
@@ -470,10 +477,10 @@ h5 {
   position: relative;
 }
 
-.mais-comprado .container
+.sombra
 {
+  display: block;
   box-shadow: 0 0 25px 5px #1f1510;
-  padding: 0;
 }
 
 .produtos {
@@ -680,6 +687,36 @@ h5 {
   font-weight: 600;
 }
 
+/* OFERTAS */
+.oferta .jogo-card
+{
+  aspect-ratio: 1 / 1;
+}
+
+.oferta .link-card
+{
+  display: block;
+
+  max-width: none;
+
+  aspect-ratio: 1 / 1;
+}
+
+.oferta .link-card img
+{
+  width: 100%;
+  height: 100%;
+
+  max-height: none;
+}
+
+.oferta .jogo-detalhes a
+{
+  white-space: wrap;
+
+  text-align: center;
+}
+
 
 
 
@@ -703,7 +740,15 @@ h5 {
   .jogo-card
   {
     display: flex;
+    height: 84px;
   }
+
+  .jogo-card-titulo
+  {
+    height: 30px;
+    width: 100px;
+  }
+
   .titulo-imagem
   {
     max-width: 300px;
@@ -714,8 +759,6 @@ h5 {
   .barra-titulo h2
   {
     font-size: 30px;
-
-    
   }
 
   .tags
@@ -725,15 +768,15 @@ h5 {
     align-items: end;
   }
 
-  .jogo-card
+  /* OFERTAS */
+  .oferta .jogo-card
   {
-    height: 84px;
+    display: block;
+    height: auto;
   }
-
-  .jogo-card-titulo
+  .oferta .jogo-detalhes
   {
-    height: 30px;
-    width: 100px;
+    text-align: center;
   }
 }
 
