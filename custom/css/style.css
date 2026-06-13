@@ -53,7 +53,7 @@ h5 {
   background: #1f1510;
 }
 
-.logo {
+.cabecalho .logo {
   width: 50px;
 }
 
@@ -763,12 +763,129 @@ h5 {
   text-align: center;
 }
 
+/* RODAPE */
+
+.rodape 
+{
+  background: #1F1510;
+
+  margin-top: 45px;
+}
+
+.rodape .container
+{
+  padding-top: 25px;
+}
+
+.texto
+{
+  color: #EBE4FF;
+
+  text-align: center;
+}
+
+.contato
+{
+  opacity: 50%;
+}
+
+.creditos-rodape
+{
+  color: #f2f3ff;
+}
+
+.creditos-rodape a
+{
+  color: #ff3845;
+}
+
+.rodape .logo
+{
+  display: flex;
+  
+  justify-content: center;
+}
+
+.rodape .logo img
+{
+  max-width: 250px;
+}
+
+.barra-separador
+{
+  display: block;
+
+  margin: 0 auto;
+
+  height: 2px;
+  width: 90%;
+
+  background: #f2f3ff;
+}
+
+/* RODAPE INFERIOR */
+
+.container.inferior
+{
+  padding-top: 0;
+  padding-bottom: 15px;
+}
+
+.inferior .links ul
+{
+  padding-top: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  opacity: 50%;
+
+  width: 100%;
+
+  margin: 0;
+
+  align-items: center;
+}
+
+.inferior .links li a
+{
+  color: #f2f3ff;
+
+  font-size: 15px;
+}
+
+.inferior .sociais ul
+{
+  list-style: none;
+
+  display: flex;
+
+  justify-content: center;
+
+  padding: 0;
+
+  margin: 0;
+
+  gap: 10px;
+}
+
+.inferior .sociais i
+{
+  color: #ff3845;
+}
 
 
 
 
 
 
+@media (max-width: 767px)
+{
+  .rodape .logo
+  {
+    width: 100%;
+  }
+}
 
 
 
@@ -824,6 +941,70 @@ h5 {
   {
     text-align: center;
   }
+
+  /* RODAPÉ */
+
+  .container.superior
+  {
+    padding-bottom: 10px;
+  }
+
+  .texto
+  {
+    margin: auto 0;
+
+    text-align: left;
+  }
+
+  .rodape .logo
+  {
+    max-width: 100%;
+
+    display: block;
+  }
+
+  .rodape .logo img
+  {
+    width: 100%;
+
+    display: block;
+  }
+
+  .container.inferior
+  {
+    padding-top: 10px;
+  }
+
+  .inferior .links
+  {
+    padding: 0;
+  }
+
+  .inferior .links ul
+  {
+    flex-direction: row;
+
+    padding: 0;
+
+    height: 100%;
+  }
+
+  .inferio .links li a
+  {
+    font-size: 12px;
+  }
+
+  .inferior .sociais
+  {
+    display: flex;
+
+    padding: 0;
+
+    margin: 0;
+
+    align-items: center;
+  }
+
 }
 
 @media (min-width: 1024px) {
