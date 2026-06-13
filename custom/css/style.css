@@ -113,7 +113,7 @@ h5 {
   width: 100%;
   height: 100vh;
 
-  z-index: 2;
+  z-index: 99;
 
   padding: 0 25px;
 
@@ -470,14 +470,17 @@ h5 {
   position: relative;
 }
 
+.mais-comprado .container
+{
+  box-shadow: 0 0 25px 5px #1f1510;
+  padding: 0;
+}
+
 .produtos {
   background: #402e25;
 
-  overflow: scroll;
+  overflow: hidden;
 
-  overflow-x: hidden;
-
-  max-height: 800px;
 }
 
 .produtos::-webkit-scrollbar
@@ -528,31 +531,70 @@ h5 {
 .barra-titulo h2
 {
   font-size: 18px;
+
+  width: 40%;
 }
 
 .jogo-card {
+  position: relative;
+
   background: #1f1510;
 
   color: #f2f3ff;
 
-  margin: 15px 6px; 
+  margin: 15px 15px 25px;
+
+  box-shadow: 0 0 8px 1px #1f1510;
+}
+
+.jogo-card-com
+{
+
+  font-size: 12px;
+
+  color: #f2f3ff;
+  opacity: 50%;
+
+  position: absolute;
+
+  top: 100%;
 }
 
 .jogo-detalhes {
-  height: 60px;
+  position:relative;
+  min-width: 0;
 }
 
 .jogo-detalhes a
 {
-  font-size: 25px;
+  font-size: 20px;
+  font-weight: 600;
 
   color: #f2f3ff;
 
   text-transform: uppercase;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  width: 90%;
 }
 
-.titulo-imagem {
+.link-card
+{
+  height: 100%;
   width: 100%;
+
+  max-width: 300px;
+}
+
+.link-card img{
+  width: 100%;
+
+  max-height: 84px;
+
+  object-fit: cover;
 }
 
 .tags
@@ -570,8 +612,17 @@ h5 {
 .tags li
 {
   background: #f2f3ff;
+}
 
-  border-radius: 5px;
+.tags a
+{
+  display: flex;
+  align-items: end;
+}
+
+.tags i
+{
+  line-height: 6px;
 }
 
 .tags-lista {
@@ -600,11 +651,44 @@ h5 {
   padding: 0 2px;
 }
 
-.jogo-estrela {
-  color: #ff3845;
-
-  aspect-ratio: 1 / 1;
+.review-estrela
+{
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
 }
+
+.review-estrela img
+{
+  width: 50px;
+  aspect-ratio: 1/1;
+}
+.review-nota
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  margin: 0;
+
+  transform: translate(-50%, -50%);
+
+  font-size: 15px;
+
+  color: #1f1510;
+
+  font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
 
 @media (min-width: 768px) {
   /* CABECALHO */
@@ -641,6 +725,11 @@ h5 {
     align-items: end;
   }
 
+  .jogo-card
+  {
+    height: 84px;
+  }
+
   .jogo-card-titulo
   {
     height: 30px;
@@ -673,5 +762,59 @@ h5 {
 
   .card-preview {
     pointer-events: all;
+  }
+
+  /* MAIS VENDIDO */
+
+  .produtos
+  {
+    position: relative;
+    z-index: -2;
+  }
+
+  .jogo-card
+  {
+    background: linear-gradient(100deg,rgba(31, 21, 16, 1) 95%, rgba(255, 255, 255, 0) 95%);
+
+    box-shadow: none;
+  }
+
+  .jogo-card::after
+  {
+    content: '';
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -1;
+
+    background: linear-gradient(100deg,rgba(31, 21, 16, 1) 47%, rgba(255, 255, 255, 0) 100%);
+    filter: blur(5px);
+
+    transform: translate(0, 10px);
+  }
+
+  .review-estrela
+  {
+    bottom: 0;
+    right: -1%;
+
+    top: 50%;
+
+    transform: translate(0, -50%);
+
+    width: 125px;
+    height: 125px;
+
+  }
+
+  .review-estrela img
+  {
+    width: 125px;
+  }
+
+  .review-nota
+  {
+    font-size: 30px;
   }
 }
