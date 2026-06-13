@@ -688,9 +688,20 @@ h5 {
 }
 
 /* OFERTAS */
+
+.oferta .produtos
+{
+  overflow-x: scroll;
+  
+  scroll-snap-type: x mandatory;
+}
+
 .oferta .jogo-card
 {
+  min-width: 260px;
   aspect-ratio: 1 / 1;
+
+  scroll-snap-align: center;
 }
 
 .oferta .link-card
@@ -700,6 +711,34 @@ h5 {
   max-width: none;
 
   aspect-ratio: 1 / 1;
+
+  height: auto;
+}
+
+.oferta .desconto
+{
+  position: absolute  ;
+  display: block;
+
+  width: 75px;
+  height: 75px;
+
+  right: 0;
+  top: 0;
+
+  background: linear-gradient(45deg,rgba(255, 255, 255, 0) 50%, rgba(255, 56, 69, 1) 50%);
+}
+
+.oferta .desconto p
+{
+  width: 40px;
+
+  margin: 0;
+}
+
+.oferta .jogo-card-com
+{
+  font-size: 15px;
 }
 
 .oferta .link-card img
