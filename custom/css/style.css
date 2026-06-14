@@ -1506,13 +1506,24 @@ h5 {
 
 /* PÁGINA PRODUTOS */
 
+.jogos .produtos
+{
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.produtos-jogo-card
+{
+  width: fit-content;
+}
+
 .produtos-jogo-card-body
 {
   background: #1f1510;
 
   color: #f2f3ff;
 
-  max-width: 400px;
+  max-width: 200px;
 }
 
 .produtos-jogo-card-body h3
@@ -1554,14 +1565,8 @@ h5 {
   max-height: 200px;
 
   scrollbar-color: #ff3845 transparent;
-}
-
-.filtros
-{
-  max-width: 400px;
 
   display: flex;
-
   flex-direction: column;
 
   gap: 5px;
@@ -1585,6 +1590,27 @@ h5 {
 
   align-items: center;
 }
+
+
+.filtros
+{
+  max-width: 400px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  position: fixed;
+
+  top: 15px;
+
+  z-index: 99;
+
+  transform: translateX(-100%);
+}
+
 
 .checkbox
 {
@@ -1694,6 +1720,12 @@ h5 {
 .campos h4
 {
   font-size: 18px;
+  padding: 0 15px;
+
+  text-align: center;
+
+  padding: 0;
+  margin: 0;
 }
 
 .campos form
@@ -1713,6 +1745,27 @@ h5 {
   border: 1px solid #f2f3ff;
 
   text-align: center;
+}
+
+.menu-pull
+{
+  position: absolute;
+
+  height: 100px;
+  width: 25px;
+
+  background: #ff3845;
+
+  color: #f2f3ff;
+
+  font-size: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  left: 100%;
+  top: 40%;
 }
 
 
@@ -1881,6 +1934,19 @@ h5 {
   .btn-compra
   {
     width: 50%;
+  }
+
+  /* FILTRO */
+
+  
+
+  .faixa-tempo form
+  {
+    flex-direction: row;
+
+    justify-content: space-evenly;
+
+    padding: 15px;
   }
 
 }
