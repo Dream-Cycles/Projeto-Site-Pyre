@@ -10,6 +10,11 @@ ul {
   list-style: none;
 }
 
+p
+{
+  margin: 0;
+}
+
 @keyframes cdRotaiton {
   from {
     transform: rotate(0deg);
@@ -1194,6 +1199,11 @@ h5 {
   color: #f2f3ff;
 
   padding: 20px 0;
+}
+
+.info-container .informacoes-gerais ul
+{
+  gap: 10px;
 }
 
 .info-container .informacoes-gerais span
