@@ -569,8 +569,9 @@ h5 {
 
   font-size: 12px;
 
-  color: #f2f3ff;
-  opacity: 50%;
+  color: #ff3845;
+  opacity: 100%;
+  font-weight: 600;
 
   position: absolute;
 
