@@ -1504,6 +1504,108 @@ h5 {
   padding: 8px 15px;
 }
 
+/* PÁGINA PRODUTOS */
+
+.produtos-jogo-card-body
+{
+  background: #1f1510;
+
+  color: #f2f3ff;
+
+  max-width: 400px;
+}
+
+.produtos-jogo-card-body h3
+{
+  font-weight: 100;
+
+  text-align: end;
+
+  padding: 5px 15px;
+  margin: 0;
+}
+
+.produtos-jogo-card p
+{
+  color: #ff3845;
+
+  font-weight: 600;
+}
+
+/* FILTROS */
+
+.categorias,
+.ordenar,
+.opcao
+{
+  background: #1f1510;
+}
+
+.categorias
+{
+  padding: 3px;
+
+  overflow: scroll;
+}
+
+.filtros
+{
+  max-width: 200px;
+}
+
+.categoria-card
+{
+  background: #000;
+
+  border: 1px solid #f2f3ff;
+
+  color: #f2f3ff;
+
+  padding: 2px 5px;
+
+  font-weight: 600;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.checkbox
+{
+  display: flex;
+
+  align-items: center;
+}
+
+.checkbox input
+{
+  opacity: 0;
+  
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.checkmark
+{
+  display: block;
+
+  width: 20px;
+  height: 20px;
+
+  border: 2px solid #f2f3ff;
+
+  margin: 5px;
+}
+
+.checkbox input:checked + .checkmark
+{
+  background: #f2f3ff;
+
+  border: none;
+}
 
 
 
