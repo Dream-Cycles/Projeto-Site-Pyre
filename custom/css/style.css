@@ -1302,6 +1302,31 @@ h5 {
 }
 
 
+/* GALERIA */
+
+.galeria
+{
+  margin-top: 35px;
+}
+
+.galeria .container h2
+{
+  text-align: center;
+
+  font-size: 45px;
+}
+
+.galeria .barra-separador
+{
+  background: #1F1510;
+
+  margin: 25px 0;
+
+  width: 100%;
+  height: 4px;
+}
+
+
 
 
 
