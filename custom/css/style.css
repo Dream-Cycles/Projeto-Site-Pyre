@@ -913,8 +913,6 @@ h5 {
 .informacoes
 {
   position: relative;
-  --descricao-h: 0;
-  --gradiente-top: 0;
 
   background: #402e25;
 
@@ -923,9 +921,10 @@ h5 {
   padding: 20px 25px;
 }
 
-.informacoes::after
+.gradiente
 {
-  content: '';
+  --descricao-h: 0;
+  --gradiente-top: 0;
 
   pointer-events: none;
 
@@ -1141,6 +1140,23 @@ h5 {
   display: flex;
   padding: 5px 0;
   justify-content: left;
+}
+
+/* DESCRICAO MAIOR */
+
+.descricao-maior .info-container
+{
+  background: #402e25;
+}
+
+.descricao-maior .informacoes
+{
+  padding-bottom: 0;
+}
+
+.descricao-maior .descricao-jogo
+{
+  max-height: 500px;
 }
 
 

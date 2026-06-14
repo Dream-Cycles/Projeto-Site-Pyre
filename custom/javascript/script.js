@@ -12,7 +12,7 @@ import {
 // GERAL
 
 const information = document.querySelectorAll('.informacoes');
-
+const gradient = document.querySelectorAll('.gradiente');
 const gameDes = document.querySelectorAll('.descricao-jogo');
 
 if (information && gameDes) {
@@ -116,21 +116,21 @@ if (previewArea) {
 
 function gameDesGradH() {
 
-    let elHeight;
+    const elHeight = new Array(gradient.length).fill(null);
     let inTop;
-    gameDes.forEach(element => {
-        elHeight = element.clientHeight;
+    gameDes.forEach((element, index) => {
+        elHeight[index] = element.clientHeight;
     });
 
-    information.forEach(element => {
+    gradient.forEach((element, index) => {
 
-        const topPadding = getComputedStyle(element)
+        const topPadding = getComputedStyle(information[index])
 
         inTop = parseFloat(topPadding.paddingTop);
 
         element.style.setProperty(
             '--descricao-h',
-            `${elHeight}px`
+            `${elHeight[index]}px`
         )
         element.style.setProperty(
             '--gradiente-top',
