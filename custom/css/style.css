@@ -1419,6 +1419,47 @@ h5 {
 .comentario-conteudo
 {
   padding: 15px 15px;
+
+  overflow: scroll;
+
+  max-height: 290px;
+}
+
+.comentario-footer
+{
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.comentario-denuncia
+{
+  opacity: 70%;
+
+  text-decoration: underline;
+}
+
+.comentario-autor
+{
+  display: flex;
+
+  flex-direction: column-reverse;
+
+  align-items: end;
+}
+
+.like-dislike
+{
+  margin: 0 5px;
+}
+
+.autor
+{
+  background: #1f1510;
+
+  color: #f2f3ff;
+
+  padding: 8px 15px;
 }
 
 
