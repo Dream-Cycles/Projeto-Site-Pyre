@@ -10,6 +10,14 @@ ul {
   list-style: none;
 }
 
+h1,
+h2,
+h3,
+h4
+{
+  color: #1f1510;
+}
+
 p
 {
   margin: 0;
@@ -798,7 +806,7 @@ h5 {
 
 .rodape 
 {
-  background: #1F1510;
+  background: #1f1510;
 
   margin-top: 45px;
 }
@@ -984,7 +992,7 @@ h5 {
 
 .produto-intro img
 {
-  box-shadow: 0 0 25px 1px #1F1510;
+  box-shadow: 0 0 25px 1px #1f1510;
 }
 
 .btn-compra
@@ -1001,7 +1009,7 @@ h5 {
   color: #f2f3ff;
   font-weight: 900;
 
-  box-shadow: 5px 5px 0px 1px #1F1510;
+  box-shadow: 5px 5px 0px 1px #1f1510;
 }
 
 .produto-intro h1::after
@@ -1012,7 +1020,7 @@ h5 {
 
   margin: 10px 0;
 
-  background: #1F1510;
+  background: #1f1510;
 
   height: 3px;
 
@@ -1117,7 +1125,7 @@ h5 {
 
 .jogo-detalhes-bot .tags li
 {
-  background: #1F1510;
+  background: #1f1510;
 
   display: flex;
   align-items: center;
@@ -1171,7 +1179,7 @@ h5 {
 
 #desc-2 .info-container
 {
-  background: #1F1510;
+  background: #1f1510;
 }
 
 .descricao-maior .informacoes
@@ -1318,12 +1326,99 @@ h5 {
 
 .galeria .barra-separador
 {
-  background: #1F1510;
+  background: #1f1510;
 
   margin: 25px 0;
 
   width: 100%;
   height: 4px;
+}
+
+/* COMENTÁRIOS */
+
+.comentarios-secao
+{
+  margin: 35px 0 0;
+}
+
+.header-comentario .barra-separador
+{
+  background: #1f1510;
+
+  margin: 0 0;
+
+  width: 100%;
+  height: 4px;
+}
+
+.header-comentario p
+{
+  opacity: 50%;
+}
+
+.comentario-form
+{
+  width: 100%;
+
+  margin-top: 25px;
+}
+
+.comentario-form textarea
+{
+  resize: none;
+
+  width: 100%;
+  height: 80px;
+
+  box-shadow: 0 0 5px 1px #402e25;
+
+  border: none;
+  border-bottom: 2px solid #1f1510;
+}
+
+.comentario-form button
+{
+  margin: 5px 0;
+
+  padding: 5px 10px;
+
+  border: none;
+
+  background: #402e25;
+
+  color: #f2f3ff;
+}
+
+.comentarios-container .comentario
+{
+  background: #1f1510;
+
+  color: #f2f3ff;
+}
+
+.comentarios-container .comentario h3
+{
+  color: #f2f3ff;
+}
+
+.comentario-titulo
+{
+  padding: 10px 25px;
+}
+
+.comentario-titulo h3
+{
+  margin: 0;
+}
+
+.comentario .barra-separador
+{
+  width: 100%;
+}
+
+.comentario-conteudo
+{
+  padding: 15px 15px;
 }
 
 
