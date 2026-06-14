@@ -468,7 +468,7 @@ h5 {
 
 /* MAIS VENDIDOS */
 
-.mais-comprado
+.mais-vendido
 {
   position: relative;
 }
@@ -476,15 +476,19 @@ h5 {
 .sombra
 {
   display: block;
-  box-shadow: 0 0 25px 5px #1f1510;
 
-  pointer-events: none;
+  box-shadow: 0 0 25px 5px #1f1510;
 }
 
-.produtos {
+.mais-vendido .produtos {
   background: #402e25;
 
-  overflow: hidden;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
 }
 
 .produtos::-webkit-scrollbar
@@ -546,9 +550,18 @@ h5 {
 
   color: #f2f3ff;
 
-  margin: 15px 15px 25px;
+  z-index: 99;
 
   box-shadow: 0 0 8px 1px #1f1510;
+
+  scale: 1;
+
+  transition: scale 0.5s ease-in-out;
+}
+
+.jogo-card:hover
+{
+  scale: 1.03;
 }
 
 .jogo-card-com
@@ -690,11 +703,17 @@ h5 {
 {
   overflow: visible;
   overflow-x: scroll;
-
-
   /* scroll-snap-type: x proximity; */
 
   position: relative;
+
+  display: flex;
+
+  gap: 30px;
+
+  padding: 30px 5px;
+
+  background: #402e25;
 }
 
 .produtos-display-h .jogo-card
