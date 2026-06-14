@@ -691,7 +691,7 @@ h5 {
   overflow: visible;
   overflow-x: scroll;
 
-  
+
   /* scroll-snap-type: x proximity; */
 
   position: relative;
@@ -967,7 +967,9 @@ h5 {
 
   .rodape .logo img
   {
-    width: 100%;
+    width: 60%;
+
+    margin: 0 auto;
 
     display: block;
   }
@@ -991,7 +993,7 @@ h5 {
     height: 100%;
   }
 
-  .inferio .links li a
+  .inferior .links li a
   {
     font-size: 12px;
   }
@@ -1111,5 +1113,30 @@ h5 {
   .produtos-display-h .jogo-card::after
   {
     display: none;
+  }
+
+  /* RODAPÉ */
+  .rodape .inferior .links li
+  {
+    
+    display: flex;
+
+    align-items: center;
+
+    margin: 0;
+
+    gap: 15px;
+  }
+
+  .rodape .links li::after
+  {
+    content: '';
+
+    display: block;
+
+    width: 2px;
+    height: 30px;
+
+    background: #f2f3ff;
   }
 }
