@@ -1212,6 +1212,25 @@ h5 {
 .info-container .informacoes-gerais ul
 {
   gap: 10px;
+
+  margin: 0;
+}
+
+.info-container .informacoes-gerais .linguagem
+{
+  opacity: 90%;
+
+  font-size: 15px;
+
+  display: flex;
+
+  margin-top: 25px;
+
+}
+
+.info-container .informacoes-gerais .linguagem p
+{
+  margin-right: 5px;
 }
 
 .info-container .informacoes-gerais span
@@ -1220,11 +1239,17 @@ h5 {
 }
 
 
+
 .classificacao-div
 {
   padding: 20px 32px;
 
   color: #f2f3ff;
+}
+
+.classificacao-desc
+{
+  margin-bottom: 15px;
 }
 
 .classificacao
@@ -1245,13 +1270,15 @@ h5 {
   align-items: center;
 
   background: #f2f3ff;
+
+  border-radius: 10px;
 }
 
 .classificacao .idade p
 {
   margin: 0;
 
-  color: #000;
+  color: #1f1510;
 
   font-size: 60px;
 
@@ -1262,10 +1289,11 @@ h5 {
 {
   padding: 0 0 0 3px;
   margin: 0;
+  margin-left: 30px;
 
   gap: 4px;
 
-  text-align: center;
+  text-align: left;
 
   max-height: 100px;
 
