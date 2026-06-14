@@ -8,32 +8,35 @@ import { previewCard, previewArea, overlay, cdContainer, videoPreview } from './
 const menuGeral = document.querySelector(".menu-geral");
 
 // HTML VIDEO
-;
-
-// PREVIEWS
-
-let selOffset = 0;
-
-// VARIÁVEIS DO PREVIEW
-let cdContainerRect = cdContainer[0].getBoundingClientRect();
-
-const videoSources = [
-    "/assets/vid/MH Wilds Preview.mp4",
-    "/assets/vid/Pragmata Preview.mp4",
-    "/assets/vid/Gow Laufey Preview.mp4",
-]
 
 let rotationIncrement = 4;
 
-let vidSize = previewCard[0].getBoundingClientRect().height;
+if (previewCard.length)
+{
+    // PREVIEWS
 
-let progresso = 0.5;
+    let selOffset = 0;
 
-let selSize = cdContainerRect.width + 6;
+    // VARIÁVEIS DO PREVIEW
 
-let videoHover = false;
+    const videoSources = [
+        "/assets/vid/MH Wilds Preview.mp4",
+        "/assets/vid/Pragmata Preview.mp4",
+        "/assets/vid/Gow Laufey Preview.mp4",
+    ]
 
-let cardAtual;
+    let cdContainerRect = cdContainer[0].getBoundingClientRect();
+
+    let vidSize = previewCard[0].getBoundingClientRect().height;
+    let progresso = 0.5;
+
+    let selSize = cdContainerRect.width + 6;
+
+    let videoHover = false;
+
+    let cardAtual;
+}
+
 
 // ABRE A BARRA DE PESQUISA (MOBILE ONLY)
 document
@@ -58,8 +61,9 @@ document.querySelector(".menu-close").addEventListener("click", function () {
 
 
 // DEFINIR O TAMANHO DO SELECT
-
-document.documentElement.style.setProperty("--selSize", `${selSize}px`);
+if (previewCard.length)
+{
+    document.documentElement.style.setProperty("--selSize", `${selSize}px`);
 
 const observer = new ResizeObserver((objetos) => {
     cdContainerRect = objetos[0].contentRect;
@@ -69,6 +73,8 @@ const observer = new ResizeObserver((objetos) => {
 });
 
 observer.observe(cdContainer[0]);
+
+
 
 // MANTER A ALTURA DO VÍDEO IGUAL AO CONTAINER DO CARD
 
@@ -94,3 +100,4 @@ document.documentElement.style.setProperty(
 const cards = [...previewCard].map(
     (card, index) => new cdCard(card, index, videoSources[index])
 )
+}

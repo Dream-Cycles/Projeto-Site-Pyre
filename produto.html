@@ -38,6 +38,200 @@
     <link rel="stylesheet" href="custom/css/style.css" />
 </head>
 
+<!-- CABECALHO -->
+
+<body>
+    <header class="cabecalho">
+        <div class="navbar navbar-expand">
+            <div class="container-fluid px-3 d-flex justify-content-center">
+                <div class="row w-100">
+                    <!-- LOGO -->
+
+                    <div class="col-4 col-md-2">
+                        <div class="navbar-brand">
+                            <a href="index.html"><img src="assets/img/Pyre Logo1.png" alt="Logo da Pyre"
+                                    class="logo" /></a>
+                        </div>
+                    </div>
+
+                    <div class="col-4 col-md-8 d-flex justify-content-center">
+                        <!-- BOTÃO DE PESQUISA -->
+
+                        <button id="botao-pesquisa" class="btn" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#barra-pesquisa">
+                            <i class="fa-solid fa-magnifying-glass icone-importante"></i>
+                        </button>
+
+                        <!-- FORM DE PESQUISA (DESKTOP) -->
+
+                        <div class="row w-100 d-none d-md-flex">
+                            <div class="col-1 p-0">
+                                <div class="botao-pesquisar h-100 d-flex align-items-center justify-content-end">
+                                    <button type="submit">
+                                        <i class="fa-solid fa-magnifying-glass icone-importante"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-11 p-0">
+                                <form class="desktop-pesquisa-form h-100 d-flex align-items-center" action="#">
+                                    <input type="text" name="pesquisa" class="pesquisa-input w-100" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MENU-HAMBURGER -->
+
+                    <div class="col-4 col-md-2">
+                        <nav role="navigation" class="menu-hamburger h-100 w-100">
+                            <div class="menu-toggle h-100 w-100">
+                                <span
+                                    class="hamburger-barras d-flex flex-column gap-2 h-100 w-100 justify-content-center">
+                                    <span class="d-block mx-auto"></span>
+                                    <span class="d-block mx-auto"></span>
+                                    <span class="d-block mx-auto"></span>
+                                </span>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FORM DE PESQUISA (MOBILE) -->
+
+        <form class="pesquisa-form d-flex">
+            <input type="text" id="pesquisa-texto" class="h-100 border-0" />
+        </form>
+
+        <!-- MENU -->
+
+        <div class="menu-geral">
+            <div class="menu-close py-4">
+                <i class="fa-solid fa-x"></i>
+            </div>
+
+            <img src="assets/img/Pyre-Black.png" class="pyre-logo" alt="Logo da Pyre" />
+
+            <a href="#" class="login">
+                <p><i class="bi bi-person-circle text-black"></i> Faça Login</p>
+
+                <span class="barra"></span>
+            </a>
+
+            <nav class="links">
+                <ul>
+                    <li>
+                        <a href="#"> <i class="fa-solid fa-cart-shopping"></i>Carrinho</a>
+                    </li>
+                    <li>
+                        <a href="#"> <i class="fa-solid fa-gamepad"></i>Jogos</a>
+                    </li>
+                    <li>
+                        <a href="#"> <i class="fa-solid fa-wrench"></i>Suporte</a>
+                    </li>
+                    <li>
+                        <a href="#"> <i class="fa-solid fa-question"></i>Sobre</a>
+                    </li>
+                    <li>
+                        <a href="#"> <i class="fa-solid fa-people-group"></i>Equipe</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <nav class="sociais d-flex">
+                <ul class="li m-0 p-0">
+                    <a href="https://www.x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                </ul>
+                <ul class="li m-0 p-0">
+                    <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </ul>
+                <ul class="li m-0 p-0">
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                </ul>
+                <ul class="li m-0 p-0">
+                    <a href="https://www.twitch.com" target="_blank"><i class="fa-brands fa-twitch"></i></a>
+                </ul>
+            </nav>
+        </div>
+    </header>
 </body>
+
+
+
+
+
+<!-- RODAPÉ-->
+
+<footer class="rodape">
+    <div class="container superior">
+        <div class="row">
+            <div class="texto col-md-8">
+                <p>
+                    <b>Pyre &copy; 2026</b>. Este é um projeto pessoal/educacional, sem
+                    fins comerciais e sem afiliação com as desenvolvedoras/publicadoras
+                    citadas. Imagens, trailers e marcas pertencem aos seus respectivos
+                    donos e são usados apenas para fins ilustrativos.
+                </p>
+
+                <p class="contato">
+                    Contatos: contato@pyre.com | +55 (19) 99999 - 9999 |
+                </p>
+
+                <div class="creditos-rodape">
+                    <p>
+                        Desenvolvido por
+                        <a href="https://github.com/Dream-Cycles?tab=overview&from=2026-06-01&to=2026-06-13"
+                            target="_blank" rel="noopener noreferrer">Bruno Tomaz</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="logo col-md-4">
+                <img src="assets/img/Pyre Logo1.png" alt="Logo simplificado da empresa 'Pyre'" class="img-fluid" />
+            </div>
+        </div>
+    </div>
+
+    <span class="barra-separador"></span>
+
+    <div class="container inferior">
+        <div class="row">
+            <nav class="links col-md-10 col-lg-8">
+                <ul>
+                    <li><a href="termosL.html"> Termos Legais</a></li>
+                    <li><a href="termosP.html">Termos de Privacidade</a></li>
+                    <li><a href="acessibilidade.html">Acessibilidade</a></li>
+                    <li><a href="reembolso.html">Reembolso</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="sobreNos.html">Sobre Nós</a></li>
+                </ul>
+            </nav>
+            <nav class="sociais col-md-2 col-lg-4">
+                <ul>
+                    <li>
+                        <a href="https://x.com"><i class="fa-brands fa-x-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitch.com"><i class="fa-brands fa-twitch"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+<!-- JAVASCRIPT -->
+
+<script type="module" src="custom/javascript/script.js"></script>
 
 </html>
