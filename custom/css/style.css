@@ -896,10 +896,134 @@ h5 {
   color: #ff3845;
 }
 
+/* PÁGINA DO PRODUTO */
+
+/* CABECALHO */
+.cabecalho
+{
+  margin-bottom: 35px;
+}
+
+/* INTRO */
+
+.informacoes
+{
+  background: #402e25;
+
+  color: #f2f3ff;
+
+  padding: 20px 25px;
+}
+
+.descricao-jogo
+{
+  --informacoes-width: 0;
+  --alinhar-left: 0;
+
+  max-height: 200px;
+
+  overflow: scroll;
+
+  position: relative
+}
+
+.descricao-jogo::after
+{
+  content: '';
+
+  pointer-events: none;
+
+  display: block;
+
+  position:absolute;
+
+  width: var(--informacoes-width);
+  height: 100%;
+
+  top: 0;
+  left: var(--alinhar-left);
+
+  background: linear-gradient(0deg,rgba(31, 21, 16, 1) 0%, rgba(255, 255, 255, 0) 38%);
+}
+
+.produto-intro
+{
+  text-align: center;
+}
+
+.produto-intro .row
+{
+  flex-direction: column;
+}
+
+.produto-intro img
+{
+  box-shadow: 0 0 25px 1px #1F1510;
+}
+
+.btn-compra
+{
+  background: #ff3845;
+
+  display: block;
+
+  margin: 10px 0;
+
+  height: 25px;
+
+  text-transform: uppercase;
+  color: #f2f3ff;
+  font-weight: 900;
+
+  box-shadow: 5px 5px 1px 1px #1F1510;
+}
+
+.produto-intro h1::after
+{
+  content: '';
+
+  display: block;
+
+  margin: 10px 0;
+
+  background: #1F1510;
+
+  height: 3px;
+
+  width: 100%;
+}
+
+
+
+.produto-intro .jogo-detalhes
+{
+}
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
 
 @media (max-width: 767px)
 {
