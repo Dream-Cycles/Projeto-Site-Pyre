@@ -1336,16 +1336,28 @@ h5 {
 
 /* COMENTÁRIOS */
 
+.comentarios-container
+{
+  display: flex;
+
+  flex-direction: column;
+}
+
 .comentarios-secao
 {
   margin: 35px 0 0;
+}
+
+.header-comentario
+{
+  margin-bottom: 15px;
 }
 
 .header-comentario .barra-separador
 {
   background: #1f1510;
 
-  margin: 0 0;
+  margin: 0;
 
   width: 100%;
   height: 4px;
@@ -1448,9 +1460,18 @@ h5 {
   align-items: end;
 }
 
+.comentario-review
+{
+  color: #1f1510;
+
+  font-weight: 900;
+}
+
 .like-dislike
 {
   margin: 0 5px;
+  
+  font-size: 20px;
 }
 
 .autor
