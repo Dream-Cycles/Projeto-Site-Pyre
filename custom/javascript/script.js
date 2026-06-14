@@ -1,42 +1,33 @@
 // IMPORT
-import { cdCard } from './cdCard.js';
-import { previewCard, previewArea, overlay, cdContainer, videoPreview } from './var.js';
+import { cdCard } from "./cdCard.js";
+import {
+    previewCard,
+    previewArea,
+    overlay,
+    cdContainer,
+    videoPreview,
+} from "./var.js";
 
-// VARIÁVEIS
+
+// GERAL
+
+const information = document.querySelectorAll('.informacoes');
+
+const gameDes = document.querySelectorAll('.descricao-jogo');
+
+if (information && gameDes) {
+    gameDesGradH();
+
+    window.addEventListener('resize', gameDesGradH())
+}
+
+// CABECALHO
+
 
 // MENU-HAMBURGER
 const menuGeral = document.querySelector(".menu-geral");
 
-// HTML VIDEO
-
 let rotationIncrement = 4;
-
-if (previewCard.length)
-{
-    // PREVIEWS
-
-    let selOffset = 0;
-
-    // VARIÁVEIS DO PREVIEW
-
-    const videoSources = [
-        "/assets/vid/MH Wilds Preview.mp4",
-        "/assets/vid/Pragmata Preview.mp4",
-        "/assets/vid/Gow Laufey Preview.mp4",
-    ]
-
-    let cdContainerRect = cdContainer[0].getBoundingClientRect();
-
-    let vidSize = previewCard[0].getBoundingClientRect().height;
-    let progresso = 0.5;
-
-    let selSize = cdContainerRect.width + 6;
-
-    let videoHover = false;
-
-    let cardAtual;
-}
-
 
 // ABRE A BARRA DE PESQUISA (MOBILE ONLY)
 document
@@ -57,47 +48,95 @@ document.querySelector(".menu-close").addEventListener("click", function () {
     menuGeral.classList.remove("menu-clicked");
 });
 
+
+
 // AÇÕES DO PREVIEW
 
-
 // DEFINIR O TAMANHO DO SELECT
-if (previewCard.length)
-{
+
+if (previewArea) {
+    // VARIÁVEIS
+    let selOffset = 0;
+
+    const videoSources = [
+        "/assets/vid/MH Wilds Preview.mp4",
+        "/assets/vid/Pragmata Preview.mp4",
+        "/assets/vid/Gow Laufey Preview.mp4",
+    ];
+
+    let cdContainerRect = cdContainer[0].getBoundingClientRect();
+
+    let vidSize = previewCard[0].getBoundingClientRect().height;
+    let progresso = 0.5;
+
+    let selSize = cdContainerRect.width + 6;
+
+    let videoHover = false;
+
+    let cardAtual;
+
     document.documentElement.style.setProperty("--selSize", `${selSize}px`);
 
-const observer = new ResizeObserver((objetos) => {
-    cdContainerRect = objetos[0].contentRect;
-    selSize = cdContainerRect.width + 6;
+    const observer = new ResizeObserver((objetos) => {
+        cdContainerRect = objetos[0].contentRect;
+        selSize = cdContainerRect.width + 6;
 
-    document.documentElement.style.setProperty("--selSize", `${selSize}px`);
-});
+        document.documentElement.style.setProperty("--selSize", `${selSize}px`);
+    });
 
-observer.observe(cdContainer[0]);
+    observer.observe(cdContainer[0]);
 
+    // MANTER A ALTURA DO VÍDEO IGUAL AO CONTAINER DO CARD
 
+    videoPreview.style.setProperty("--videoSize", `${vidSize}px`);
 
-// MANTER A ALTURA DO VÍDEO IGUAL AO CONTAINER DO CARD
+    const observerVideo = new ResizeObserver((objetos) => {
+        previewCard[0] = objetos[0].contentRect;
+        vidSize = previewCard.height;
 
-videoPreview.style.setProperty("--videoSize", `${vidSize}px`);
+        document.documentElement.style.setProperty("--videoSize", `${vidSize}px`);
+    });
 
-const observerVideo = new ResizeObserver((objetos) => {
-    previewCard[0] = objetos[0].contentRect;
-    vidSize = previewCard.height;
+    // CENTRALIZAR AFTER DO SELECT
 
-    document.documentElement.style.setProperty("--videoSize", `${vidSize}px`);
-});
+    selOffset = (selSize - cdContainerRect.width) / 2;
 
-// CENTRALIZAR AFTER DO SELECT
+    document.documentElement.style.setProperty(
+        "--seloffset",
+        `${selOffset * -1}px`,
+    );
 
-selOffset = (selSize - cdContainerRect.width) / 2;
+    // OBJETO DOS CARD
+    const cards = [...previewCard].map(
+        (card, index) => new cdCard(card, index, videoSources[index]),
+    );
+}
 
-document.documentElement.style.setProperty(
-    "--seloffset",
-    `${selOffset * -1}px`,
-);
+// FUNÇÕES GERAIS
 
-// OBJETO DOS CARD
-const cards = [...previewCard].map(
-    (card, index) => new cdCard(card, index, videoSources[index])
-)
+function gameDesGradH() {
+
+    let elHeight;
+    let inTop;
+    gameDes.forEach(element => {
+        elHeight = element.clientHeight;
+    });
+
+    information.forEach(element => {
+
+        const topPadding = getComputedStyle(element)
+
+        inTop = parseFloat(topPadding.paddingTop);
+
+        element.style.setProperty(
+            '--descricao-h',
+            `${elHeight}px`
+        )
+        element.style.setProperty(
+            '--gradiente-top',
+            `${inTop}px`
+        )
+
+    });
+
 }

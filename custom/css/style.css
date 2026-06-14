@@ -908,6 +908,10 @@ h5 {
 
 .informacoes
 {
+  position: relative;
+  --descricao-h: 0;
+  --gradiente-top: 0;
+
   background: #402e25;
 
   color: #f2f3ff;
@@ -917,8 +921,6 @@ h5 {
 
 .descricao-jogo
 {
-  --informacoes-width: 0;
-  --alinhar-left: 0;
 
   max-height: 200px;
 
@@ -927,7 +929,7 @@ h5 {
   position: relative
 }
 
-.descricao-jogo::after
+.informacoes::after
 {
   content: '';
 
@@ -937,11 +939,11 @@ h5 {
 
   position:absolute;
 
-  width: var(--informacoes-width);
-  height: 100%;
+  width: 100%;
+  height:  var(--descricao-h);
 
-  top: 0;
-  left: var(--alinhar-left);
+  top: var(--gradiente-top);
+  left: 0;
 
   background: linear-gradient(0deg,rgba(31, 21, 16, 1) 0%, rgba(255, 255, 255, 0) 38%);
 }
