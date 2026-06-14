@@ -1059,13 +1059,6 @@ h5 {
   }
 
   /* MAIS VENDIDO */
-
-  .produtos
-  {
-    position: relative;
-    z-index: -2;
-  }
-
   .jogo-card
   {
     background: linear-gradient(100deg,rgba(31, 21, 16, 1) 95%, rgba(255, 255, 255, 0) 95%);
