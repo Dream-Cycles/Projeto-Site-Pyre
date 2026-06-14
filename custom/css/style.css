@@ -1536,9 +1536,12 @@ h5 {
 
 .categorias,
 .ordenar,
-.opcao
+.opcao,
+.faixa-tempo
 {
   background: #1f1510;
+
+  margin: 2px;
 }
 
 .categorias
@@ -1546,11 +1549,22 @@ h5 {
   padding: 3px;
 
   overflow: scroll;
+  overflow-x: hidden;
+
+  max-height: 200px;
+
+  scrollbar-color: #ff3845 transparent;
 }
 
 .filtros
 {
-  max-width: 200px;
+  max-width: 400px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
 }
 
 .categoria-card
@@ -1606,6 +1620,102 @@ h5 {
 
   border: none;
 }
+
+.ordenar
+{
+  padding: 3px;
+  
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.ordenar-icone
+{
+  padding: 0 5px 0 0;
+
+  font-size: 35px;
+}
+
+.ordenar-card
+{
+  background: #000;
+
+  border: 3px solid #f2f3ff;
+
+  color: #f2f3ff;
+
+  padding: 2px 5px;
+
+  font-weight: 600;
+
+  display: flex;
+
+  align-items: center;
+
+  display: flex;
+}
+
+.ordenar-card:hover
+{
+  background: #ff3845;
+  color: #000;
+}
+
+.opcao
+{
+  color: #f2f3ff;
+
+  padding: 10px;
+
+  padding-left: 5px;
+}
+
+.opcao p
+{
+  text-align: left;
+}
+
+.campos
+{
+
+  background: #1f1510;
+
+  color: #f2f3ff;
+
+  max-width: 400px;
+
+  color: #f2f3ff;
+
+  padding: 3px;
+}
+
+.campos h4
+{
+  font-size: 18px;
+}
+
+.campos form
+{
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.campos input[type="date"]
+{
+  color: #f2f3ff;
+
+  background: #000;
+  border: 1px solid #f2f3ff;
+
+  text-align: center;
+}
+
+
 
 
 
