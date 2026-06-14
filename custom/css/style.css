@@ -690,7 +690,9 @@ h5 {
 {
   overflow: visible;
   overflow-x: scroll;
-  scroll-snap-type: x mandatory;
+
+  
+  /* scroll-snap-type: x proximity; */
 
   position: relative;
 }
@@ -701,7 +703,7 @@ h5 {
   max-width: 200px;
   aspect-ratio: 1 / 1;
 
-  scroll-snap-align: center;
+  /* scroll-snap-align: center; */
 }
 
 .produtos-display-h .link-card
@@ -802,7 +804,7 @@ h5 {
 .rodape .logo
 {
   display: flex;
-  
+
   justify-content: center;
 }
 
