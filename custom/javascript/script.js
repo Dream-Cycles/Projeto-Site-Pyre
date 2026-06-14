@@ -15,6 +15,15 @@ const information = document.querySelectorAll('.informacoes');
 const gradient = document.querySelectorAll('.gradiente');
 const gameDes = document.querySelectorAll('.descricao-jogo');
 
+const filter = document.querySelector('.filtros');
+const menuFilter = document.querySelector('.menu-pull');
+
+
+if (filter)
+{
+    menuFilter.addEventListener('click', pullFilter);
+}
+
 if (information && gameDes) {
     gameDesGradH();
 
@@ -47,6 +56,9 @@ document
 document.querySelector(".menu-close").addEventListener("click", function () {
     menuGeral.classList.remove("menu-clicked");
 });
+
+
+// ABRE FILTROS
 
 
 
@@ -139,4 +151,9 @@ function gameDesGradH() {
 
     });
 
+}
+
+function pullFilter()
+{
+    filter.classList.toggle("menu-pulled");
 }

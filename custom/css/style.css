@@ -1594,6 +1594,7 @@ h5 {
 
 .filtros
 {
+
   max-width: 400px;
 
   display: flex;
@@ -1609,6 +1610,13 @@ h5 {
   z-index: 99;
 
   transform: translateX(-100%);
+
+  transition: transform 0.3s ease-in;
+}
+
+.filtros.menu-pulled
+{
+  transform: translateX(0);
 }
 
 
