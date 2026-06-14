@@ -17,6 +17,7 @@ const gameDes = document.querySelectorAll('.descricao-jogo');
 
 const filter = document.querySelector('.filtros');
 const menuFilter = document.querySelector('.menu-pull');
+const overlayPro = document.querySelector('.overlay-produtos');
 
 
 if (filter)
@@ -156,4 +157,5 @@ function gameDesGradH() {
 function pullFilter()
 {
     filter.classList.toggle("menu-pulled");
+    overlayPro.classList.toggle("menu-pulled");
 }
