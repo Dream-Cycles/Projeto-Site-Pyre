@@ -29,7 +29,7 @@ p
 body {
   font-family: "Encode Sans", sans-serif;
 
-  background: #f2f3ff;
+  background: #ddd0d0;
 }
 
 :root {
@@ -312,7 +312,7 @@ h5 {
 
 /* DESTAQUES */
 
-.preview {
+.preview-section {
   position: relative;
   padding: 3px 0;
 
@@ -326,28 +326,29 @@ h5 {
   left: 0;
   top: 0;
 
-  background: linear-gradient(
-    0deg,
-    rgba(31, 21, 16, 1) 71%,
-    rgba(255, 255, 255, 0) 72%
-  );
+  background: linear-gradient(0deg,rgba(31, 21, 16, 1) 0%, rgba(15, 14, 14, 1) 74%, rgba(15, 14, 14, 0) 75%);
 
   transition:
     left 0.5s ease-in-out,
     top 0.3s ease-in,
     opacity 0.3s ease-in;
 
-  z-index: 4;
-
   width: 250px;
 
   pointer-events: none;
+
+  filter: drop-shadow(-25px 0 #a11c25);
 }
+
 
 .card-preview h3 {
   height: 70px;
 
-  color: #ff3845;
+  color: #f2f3ff;
+
+  margin: 15px 0;
+
+  align-content: center;
 }
 
 .card-preview p {
@@ -450,6 +451,8 @@ h5 {
   left: 0;
 
   z-index: 1;
+
+  pointer-events: none
 }
 
 .overlay.video-show {
@@ -464,14 +467,14 @@ h5 {
   top: 5px;
 }
 
-.detalhe p {
-  margin: 0;
+.aviso p {
+  margin: 10px 0;
 
   height: 25px;
 
   align-content: center;
 
-  background: #ff3845;
+  color: #ff3845;
 
   font-weight: 600;
 }
