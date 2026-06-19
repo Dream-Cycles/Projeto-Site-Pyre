@@ -549,11 +549,29 @@ h5 {
   height: 60px;
 }
 
-.barra-titulo h2
+.opcoes-container
 {
-  font-size: 18px;
+  display: flex;
 
-  width: 40%;
+  width: 100%;
+
+  text-align: center;
+
+  justify-content: space-evenly;
+}
+
+.opcao
+{
+  font-size: 1rem;
+
+  text-align: center;
+
+  opacity: 50%;
+}
+
+.opcao.ativo
+{
+  opacity: 100%;
 }
 
 .jogo-card {
@@ -1863,22 +1881,11 @@ h5 {
     height: 84px;
   }
 
-  .jogo-card-titulo
-  {
-    height: 30px;
-    width: 100px;
-  }
-
   .titulo-imagem
   {
     max-width: 300px;
 
     object-fit: cover;
-  }
-
-  .barra-titulo h2
-  {
-    font-size: 30px;
   }
 
   .tags
