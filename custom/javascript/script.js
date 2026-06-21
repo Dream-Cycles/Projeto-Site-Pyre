@@ -9,35 +9,45 @@ import {
 } from "./var.js";
 
 
-// GERAL
 
+// HOME
+
+// MENU-HAMBURGER
+const menuGeral = document.querySelector(".menu-geral");
+
+// OPÇÕES DA SEÇÃO "MAIS VENDIDOS"
+const option = document.querySelectorAll('.opcao');
+let lastOption = document.querySelector('.ativo');
+
+// PRODUTO
 const information = document.querySelectorAll('.informacoes');
 const gradient = document.querySelectorAll('.gradiente');
 const gameDes = document.querySelectorAll('.descricao-jogo');
 
+// PRODUTO (MENU LATERAL)
 const filter = document.querySelector('.filtros');
 const menuFilter = document.querySelector('.menu-pull');
 const overlayPro = document.querySelector('.overlay-produtos');
 
+
+// PROCESSAMENTO
+if (option)
+{
+    option.forEach(element => {
+        element.addEventListener('click', optionChange);
+    });
+}
 
 if (filter)
 {
     menuFilter.addEventListener('click', pullFilter);
 }
 
-if (information && gameDes) {
+if (information) {
     gameDesGradH();
 
     window.addEventListener('resize', gameDesGradH())
 }
-
-// CABECALHO
-
-
-// MENU-HAMBURGER
-const menuGeral = document.querySelector(".menu-geral");
-
-let rotationIncrement = 4;
 
 // ABRE A BARRA DE PESQUISA (MOBILE ONLY)
 document
@@ -48,7 +58,6 @@ document
     });
 
 // ABRE O MENU QUANDO FOR CLICADO
-
 document
     .querySelector(".menu-hamburger")
     .addEventListener("click", function () {
@@ -58,13 +67,7 @@ document.querySelector(".menu-close").addEventListener("click", function () {
     menuGeral.classList.remove("menu-clicked");
 });
 
-
-// ABRE FILTROS
-
-
-
-// AÇÕES DO PREVIEW
-
+// PREVIEW
 // DEFINIR O TAMANHO DO SELECT
 
 if (previewArea) {
@@ -125,7 +128,21 @@ if (previewArea) {
     );
 }
 
-// FUNÇÕES GERAIS
+// FUNÇÕES
+function optionChange(event){
+
+    if(lastOption)
+    {
+        lastOption.classList.remove('ativo')
+    }
+
+    const clickedElement = event.target;
+    
+    clickedElement.classList.toggle('ativo');
+
+    lastOption = clickedElement;
+
+}
 
 function gameDesGradH() {
 
