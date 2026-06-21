@@ -733,7 +733,7 @@ h5 {
 
 /* OFERTAS */
 
-.produtos-display-h .produtos
+.produtos-display .produtos
 {
   overflow: visible;
   overflow-x: scroll;
@@ -750,7 +750,7 @@ h5 {
   background: #402e25;
 }
 
-.produtos-display-h .jogo-card
+.produtos-display .jogo-card
 {
   min-width: 260px;
   max-width: 200px;
@@ -759,7 +759,7 @@ h5 {
   /* scroll-snap-align: center; */
 }
 
-.produtos-display-h .link-card
+.produtos-display .link-card
 {
   display: block;
 
@@ -770,7 +770,7 @@ h5 {
   height: auto;
 }
 
-.produtos-display-h .desconto
+.produtos-display .desconto
 {
   position: absolute  ;
   display: block;
@@ -784,19 +784,19 @@ h5 {
   background: linear-gradient(45deg,rgba(255, 255, 255, 0) 50%, rgba(255, 56, 69, 1) 50%);
 }
 
-.produtos-display-h .desconto p
+.produtos-display .desconto p
 {
   width: 40px;
 
   margin: 0;
 }
 
-.produtos-display-h .jogo-card-com
+.produtos-display .jogo-card-com
 {
   font-size: 15px;
 }
 
-.produtos-display-h .link-card img
+.produtos-display .link-card img
 {
   width: 100%;
   height: 100%;
@@ -804,7 +804,7 @@ h5 {
   max-height: none;
 }
 
-.produtos-display-h .jogo-detalhes a
+.produtos-display .jogo-detalhes a
 {
   white-space: wrap;
 
@@ -1558,42 +1558,7 @@ h5 {
   pointer-events: none;
 }
 
-.jogos .produtos
-{
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 
-.produtos-jogo-card
-{
-  width: fit-content;
-}
-
-.produtos-jogo-card-body
-{
-  background: #1f1510;
-
-  color: #f2f3ff;
-
-  max-width: 200px;
-}
-
-.produtos-jogo-card-body h3
-{
-  font-weight: 100;
-
-  text-align: end;
-
-  padding: 5px 15px;
-  margin: 0;
-}
-
-.produtos-jogo-card p
-{
-  color: #ff3845;
-
-  font-weight: 600;
-}
 
 /* FILTROS */
 
@@ -1898,12 +1863,12 @@ h5 {
   }
 
   /* OFERTAS */
-  .produtos-display-h .jogo-card
+  .produtos-display .jogo-card
   {
     display: block;
     height: auto;
   }
-  .produtos-display-h .jogo-detalhes
+  .produtos-display .jogo-detalhes
   {
     text-align: center;
   }
@@ -2075,24 +2040,24 @@ h5 {
   }
 
   /* DISPLAY DE PRODUTOS (HORIZONTAL) */
-  .produtos-display-h .produtos
+  .produtos-display .produtos
   {
     position: static;
   }
 
-  .produtos-display-h .jogo-card
+  .produtos-display .jogo-card
   {
     background: #1f1510;
   }
 
-  .produtos-display-h .jogo-card
+  .produtos-display .jogo-card
   {
     background: #1f1510;
 
     box-shadow: 0 0 8px 1px #1f1510;
   }
 
-  .produtos-display-h .jogo-card::after
+  .produtos-display .jogo-card::after
   {
     display: none;
   }
