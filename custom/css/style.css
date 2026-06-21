@@ -10,9 +10,7 @@ ul {
   list-style: none;
 }
 
-
-p
-{
+p {
   margin: 0;
 }
 
@@ -33,7 +31,6 @@ body {
 }
 
 :root {
-
   --seloffset: 0;
 
   --selSize: 0;
@@ -152,8 +149,6 @@ h5 {
 
 .login,
 .links a {
-
-
   color: #1f1510;
 }
 
@@ -326,7 +321,10 @@ h5 {
   left: 0;
   top: 0;
 
-  background: linear-gradient(0deg,rgba(31, 21, 16, 1) 0%, rgba(15, 14, 14, 1) 74%, rgba(15, 14, 14, 0) 75%);
+  background: linear-gradient(0deg,
+      rgba(31, 21, 16, 1) 0%,
+      rgba(15, 14, 14, 1) 74%,
+      rgba(15, 14, 14, 0) 75%);
 
   transition:
     left 0.5s ease-in-out,
@@ -339,7 +337,6 @@ h5 {
 
   filter: drop-shadow(-25px 0 #a11c25);
 }
-
 
 .card-preview h3 {
   height: 70px;
@@ -356,7 +353,6 @@ h5 {
 }
 
 .cd-img {
-  
   --rotation: 0deg;
   position: relative;
   width: 100%;
@@ -372,6 +368,7 @@ h5 {
 
   transition: --tmp 5s ease;
 }
+
 .cd-container {
   position: relative;
 
@@ -391,11 +388,9 @@ h5 {
 
   background-size: 100% 100%;
   background-position: 0px 0px;
-  background-image: conic-gradient(
-    from 0deg at 50% 50%,
-    #ff3845 var(--progressoBarra),
-    #1f1510 var(--progressoBarra)
-  );
+  background-image: conic-gradient(from 0deg at 50% 50%,
+      #ff3845 var(--progressoBarra),
+      #1f1510 var(--progressoBarra));
 
   z-index: 2;
 }
@@ -452,7 +447,7 @@ h5 {
 
   z-index: 1;
 
-  pointer-events: none
+  pointer-events: none;
 }
 
 .overlay.video-show {
@@ -481,13 +476,11 @@ h5 {
 
 /* MAIS VENDIDOS */
 
-.mais-vendido
-{
+.mais-vendido {
   position: relative;
 }
 
-.sombra
-{
+.sombra {
   display: block;
 
   box-shadow: 0 0 25px 5px #1f1510;
@@ -504,37 +497,38 @@ h5 {
   gap: 20px;
 }
 
-.produtos::-webkit-scrollbar
-{
+.produtos::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 
   background: none;
 }
 
-.produtos::-webkit-scrollbar-track
-{
+.produtos::-webkit-scrollbar-track {
   background: none;
 }
 
-.produtos::-webkit-scrollbar-thumb
-{
+.produtos::-webkit-scrollbar-thumb {
   background: #ff3845;
 }
 
-.produtos-style
-{
+.produtos-style {
   position: absolute;
 
   top: 60px;
 
-  width: 89%;    
+  width: 89%;
   height: 93%;
   z-index: 1;
 
   pointer-events: none;
 
-  background: linear-gradient(0deg,rgba(31, 21, 16, 0.6) 0%, rgba(31, 21, 16, 0.4) 18%, rgba(31, 21, 16, 0) 50%, rgba(31, 21, 16, 0.4) 80%, rgba(31, 21, 16, 0.6) 100%);
+  background: linear-gradient(0deg,
+      rgba(31, 21, 16, 0.6) 0%,
+      rgba(31, 21, 16, 0.4) 18%,
+      rgba(31, 21, 16, 0) 50%,
+      rgba(31, 21, 16, 0.4) 80%,
+      rgba(31, 21, 16, 0.6) 100%);
 }
 
 .jogo-link {
@@ -549,8 +543,7 @@ h5 {
   height: 60px;
 }
 
-.opcoes-container
-{
+.opcoes-container {
   display: flex;
 
   width: 100%;
@@ -560,8 +553,7 @@ h5 {
   justify-content: space-evenly;
 }
 
-.opcao
-{
+.opcao {
   font-size: 1rem;
 
   text-align: center;
@@ -571,8 +563,7 @@ h5 {
   opacity: 50%;
 }
 
-.opcao.ativo
-{
+.opcao.ativo {
   opacity: 100%;
 }
 
@@ -592,14 +583,11 @@ h5 {
   transition: scale 0.5s ease-in-out;
 }
 
-.jogo-card:hover
-{
+.jogo-card:hover {
   scale: 1.03;
 }
 
-.jogo-card-com
-{
-
+.jogo-card-com {
   font-size: 12px;
 
   color: #ff3845;
@@ -612,12 +600,11 @@ h5 {
 }
 
 .jogo-detalhes {
-  position:relative;
+  position: relative;
   min-width: 0;
 }
 
-.jogo-detalhes a
-{
+.jogo-detalhes a {
   font-size: 20px;
   font-weight: 600;
 
@@ -632,15 +619,14 @@ h5 {
   width: 90%;
 }
 
-.link-card
-{
+.link-card {
   height: 100%;
   width: 100%;
 
   max-width: 300px;
 }
 
-.link-card img{
+.link-card img {
   width: 100%;
 
   max-height: 84px;
@@ -648,31 +634,26 @@ h5 {
   object-fit: cover;
 }
 
-.tags
-{
+.tags {
   display: none;
 
   height: 50%;
 }
 
-.tags i
-{
+.tags i {
   margin: 0 2px;
 }
 
-.tags li
-{
+.tags li {
   background: #f2f3ff;
 }
 
-.tags a
-{
+.tags a {
   display: flex;
   align-items: end;
 }
 
-.tags i
-{
+.tags i {
   line-height: 6px;
 }
 
@@ -702,20 +683,18 @@ h5 {
   padding: 0 2px;
 }
 
-.review-estrela
-{
+.review-estrela {
   position: absolute;
   right: -20px;
   bottom: -20px;
 }
 
-.review-estrela img
-{
+.review-estrela img {
   width: 50px;
   aspect-ratio: 1/1;
 }
-.review-nota
-{
+
+.review-nota {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -733,8 +712,7 @@ h5 {
 
 /* OFERTAS */
 
-.produtos-display .produtos
-{
+.produtos-display .produtos {
   overflow-x: scroll;
   /* scroll-snap-type: x proximity; */
 
@@ -749,8 +727,7 @@ h5 {
   background: #402e25;
 }
 
-.produtos-display .jogo-card
-{
+.produtos-display .jogo-card {
   min-width: 260px;
   max-width: 200px;
   aspect-ratio: 1 / 1;
@@ -758,8 +735,7 @@ h5 {
   /* scroll-snap-align: center; */
 }
 
-.produtos-display .link-card
-{
+.produtos-display .link-card {
   display: block;
 
   max-width: none;
@@ -769,9 +745,8 @@ h5 {
   height: auto;
 }
 
-.produtos-display .desconto
-{
-  position: absolute  ;
+.produtos-display .desconto {
+  position: absolute;
   display: block;
 
   width: 75px;
@@ -780,31 +755,29 @@ h5 {
   right: 0;
   top: 0;
 
-  background: linear-gradient(45deg,rgba(255, 255, 255, 0) 50%, rgba(255, 56, 69, 1) 50%);
+  background: linear-gradient(45deg,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 56, 69, 1) 50%);
 }
 
-.produtos-display .desconto p
-{
+.produtos-display .desconto p {
   width: 40px;
 
   margin: 0;
 }
 
-.produtos-display .jogo-card-com
-{
+.produtos-display .jogo-card-com {
   font-size: 15px;
 }
 
-.produtos-display .link-card img
-{
+.produtos-display .link-card img {
   width: 100%;
   height: 100%;
 
   max-height: none;
 }
 
-.produtos-display .jogo-detalhes a
-{
+.produtos-display .jogo-detalhes a {
   white-space: wrap;
 
   display: -webkit-box;
@@ -819,54 +792,45 @@ h5 {
 
 /* RODAPE */
 
-.rodape 
-{
+.rodape {
   background: #1f1510;
 
   margin-top: 45px;
 }
 
-.rodape .container
-{
+.rodape .container {
   padding-top: 25px;
 }
 
-.texto
-{
-  color: #EBE4FF;
+.texto {
+  color: #ebe4ff;
 
   text-align: center;
 }
 
-.contato
-{
+.contato {
   opacity: 50%;
 }
 
-.creditos-rodape
-{
+.creditos-rodape {
   color: #f2f3ff;
 }
 
-.creditos-rodape a
-{
+.creditos-rodape a {
   color: #ff3845;
 }
 
-.rodape .logo
-{
+.rodape .logo {
   display: flex;
 
   justify-content: center;
 }
 
-.rodape .logo img
-{
+.rodape .logo img {
   max-width: 250px;
 }
 
-.barra-separador
-{
+.barra-separador {
   display: block;
 
   margin: 0 auto;
@@ -879,14 +843,12 @@ h5 {
 
 /* RODAPE INFERIOR */
 
-.container.inferior
-{
+.container.inferior {
   padding-top: 0;
   padding-bottom: 15px;
 }
 
-.inferior .links ul
-{
+.inferior .links ul {
   padding-top: 0;
 
   display: flex;
@@ -901,15 +863,13 @@ h5 {
   align-items: center;
 }
 
-.inferior .links li a
-{
+.inferior .links li a {
   color: #f2f3ff;
 
   font-size: 15px;
 }
 
-.inferior .sociais ul
-{
+.inferior .sociais ul {
   list-style: none;
 
   display: flex;
@@ -923,23 +883,20 @@ h5 {
   gap: 10px;
 }
 
-.inferior .sociais i
-{
+.inferior .sociais i {
   color: #ff3845;
 }
 
 /* PÁGINA DO PRODUTO */
 
 /* CABECALHO */
-.cabecalho.margin
-{
+.cabecalho.margin {
   margin-bottom: 35px;
 }
 
 /* INTRO */
 
-.informacoes
-{
+.informacoes {
   position: relative;
 
   background: #402e25;
@@ -949,8 +906,7 @@ h5 {
   padding: 20px 25px;
 }
 
-.gradiente
-{
+.gradiente {
   --descricao-h: 0;
   --gradiente-top: 0;
 
@@ -958,20 +914,20 @@ h5 {
 
   display: block;
 
-  position:absolute;
+  position: absolute;
 
   width: 100%;
-  height:  var(--descricao-h);
+  height: var(--descricao-h);
 
   top: var(--gradiente-top);
   left: 0;
 
-  background: linear-gradient(0deg,rgba(31, 21, 16, 1) 0%, rgba(255, 255, 255, 0) 38%);
+  background: linear-gradient(0deg,
+      rgba(31, 21, 16, 1) 0%,
+      rgba(255, 255, 255, 0) 38%);
 }
 
-.descricao-jogo
-{
-
+.descricao-jogo {
   max-height: 200px;
 
   overflow: scroll;
@@ -984,34 +940,27 @@ h5 {
   padding: 4px;
 }
 
-.descricao-jogo::-webkit-scrollbar
-{
+.descricao-jogo::-webkit-scrollbar {
   width: 3px;
 }
 
-.descricao-jogo::-webkit-scrollbar-track
-{
+.descricao-jogo::-webkit-scrollbar-track {
   background: transparent;
 }
 
-
-.produto-intro
-{
+.produto-intro {
   text-align: center;
 }
 
-.produto-intro .row
-{
+.produto-intro .row {
   flex-direction: column;
 }
 
-.produto-intro img
-{
+.produto-intro img {
   box-shadow: 0 0 25px 1px #1f1510;
 }
 
-.btn-compra
-{
+.btn-compra {
   background: #ff3845;
 
   display: block;
@@ -1027,9 +976,8 @@ h5 {
   box-shadow: 5px 5px 0px 1px #1f1510;
 }
 
-.produto-intro h1::after
-{
-  content: '';
+.produto-intro h1::after {
+  content: "";
 
   display: block;
 
@@ -1042,26 +990,23 @@ h5 {
   width: 100%;
 }
 
-.dev
-{
+.dev {
   font-size: 15px;
 }
-.dev a
-{
+
+.dev a {
   font-size: 15px;
 
   text-transform: none;
 
-  color:#ff3845;
+  color: #ff3845;
 }
 
-.produto-intro .jogo-detalhes-pro
-{
+.produto-intro .jogo-detalhes-pro {
   padding: 15px 0;
 }
 
-.jogo-avaliacoes
-{
+.jogo-avaliacoes {
   display: flex;
   align-items: center;
 
@@ -1070,35 +1015,29 @@ h5 {
   padding-bottom: 15px;
 }
 
-.jogo-avaliacoes p
-{
+.jogo-avaliacoes p {
   margin: 0;
 }
 
-.jogo-preco
-{
+.jogo-preco {
   display: flex;
   flex-direction: column;
 }
 
-.jogo-preco .jogo-oferta p
-{
+.jogo-preco .jogo-oferta p {
   margin: 0;
 }
 
-.jogo-preco .jogo-oferta
-{
+.jogo-preco .jogo-oferta {
   display: flex;
   gap: 5px;
 }
 
-.jogo-preco .preco-antigo
-{
+.jogo-preco .preco-antigo {
   text-decoration: line-through;
 }
 
-.jogo-preco .preco-atual
-{
+.jogo-preco .preco-atual {
   text-align: left;
 
   font-size: 23px;
@@ -1109,8 +1048,7 @@ h5 {
   margin: 0;
 }
 
-.jogo-detalhes-bot .tags
-{
+.jogo-detalhes-bot .tags {
   display: flex;
 
   align-items: center;
@@ -1122,13 +1060,11 @@ h5 {
   margin-top: 15px;
 }
 
-.jogo-detalhes-bot .tags p
-{
+.jogo-detalhes-bot .tags p {
   margin: 0;
 }
 
-.jogo-detalhes-bot .tags ul
-{
+.jogo-detalhes-bot .tags ul {
   display: flex;
 
   gap: 5px;
@@ -1138,8 +1074,7 @@ h5 {
   margin: 0;
 }
 
-.jogo-detalhes-bot .tags li
-{
+.jogo-detalhes-bot .tags li {
   background: #1f1510;
 
   display: flex;
@@ -1150,8 +1085,7 @@ h5 {
   border: 1px solid #f2f3ff;
 }
 
-.jogo-detalhes-bot .tags a
-{
+.jogo-detalhes-bot .tags a {
   font-size: 12px;
 
   width: fit-content;
@@ -1163,8 +1097,7 @@ h5 {
   color: #f2f3ff;
 }
 
-.plataformas
-{
+.plataformas {
   display: flex;
   padding: 5px 0;
   justify-content: left;
@@ -1172,8 +1105,7 @@ h5 {
 
 /* DESCRICAO MAIOR */
 
-.separador
-{
+.separador {
   display: block;
 
   background: #f2f3ff;
@@ -1182,57 +1114,47 @@ h5 {
   height: 1px;
 }
 
-.descricao-maior
-{
+.descricao-maior {
   margin-top: 25px;
 }
 
-#desc-1 .info-container
-{
+#desc-1 .info-container {
   background: #402e25;
 }
 
-#desc-2 .info-container
-{
+#desc-2 .info-container {
   background: #1f1510;
 }
 
-.descricao-maior .informacoes
-{
+.descricao-maior .informacoes {
   padding-bottom: 0;
 }
 
-.descricao-maior .descricao-jogo
-{
+.descricao-maior .descricao-jogo {
   max-height: 500px;
 }
 
-.descricao-maior .descricao-jogo p
-{
+.descricao-maior .descricao-jogo p {
   text-align: center;
 }
 
-.descricao-maior .descricao-jogo .produto-video
-{
+.descricao-maior .descricao-jogo .produto-video {
   width: 100%;
 }
 
-.info-container .informacoes-gerais
-{
+.info-container .informacoes-gerais {
   color: #f2f3ff;
 
   padding: 20px 0;
 }
 
-.info-container .informacoes-gerais ul
-{
+.info-container .informacoes-gerais ul {
   gap: 10px;
 
   margin: 0;
 }
 
-.info-container .informacoes-gerais .linguagem
-{
+.info-container .informacoes-gerais .linguagem {
   opacity: 90%;
 
   font-size: 15px;
@@ -1240,42 +1162,33 @@ h5 {
   display: flex;
 
   margin-top: 25px;
-
 }
 
-.info-container .informacoes-gerais .linguagem p
-{
+.info-container .informacoes-gerais .linguagem p {
   margin-right: 5px;
 }
 
-.info-container .informacoes-gerais span
-{
+.info-container .informacoes-gerais span {
   font-weight: 600;
 }
 
-
-
-.classificacao-div
-{
+.classificacao-div {
   padding: 20px 32px;
 
   color: #f2f3ff;
 }
 
-.classificacao-desc
-{
+.classificacao-desc {
   margin-bottom: 15px;
 }
 
-.classificacao
-{
+.classificacao {
   display: flex;
 
   align-items: center;
 }
 
-.classificacao .idade
-{
+.classificacao .idade {
   display: flex;
 
   width: 100px;
@@ -1289,8 +1202,7 @@ h5 {
   border-radius: 10px;
 }
 
-.classificacao .idade p
-{
+.classificacao .idade p {
   margin: 0;
 
   color: #1f1510;
@@ -1300,8 +1212,7 @@ h5 {
   font-weight: 900;
 }
 
-.classificacao .motivos
-{
+.classificacao .motivos {
   padding: 0 0 0 3px;
   margin: 0;
   margin-left: 30px;
@@ -1318,57 +1229,48 @@ h5 {
   justify-content: center;
 }
 
-.classificacao .motivos p
-{
+.classificacao .motivos p {
   margin: 0;
 
   font-size: 14px;
 }
 
-.suporte-controle
-{
+.suporte-controle {
   color: #f2f3ff;
 
   padding: 10px 0;
 }
 
 .suporte-controle ul,
-.suporte-controle p
-{
+.suporte-controle p {
   margin: 0;
 }
 
-.suporte-controle ul
-{
+.suporte-controle ul {
   padding-left: 20px;
 }
 
-.suporte-controle ul li
-{
+.suporte-controle ul li {
   display: flex;
 
   align-items: center;
-  
+
   gap: 5px;
 }
 
-
 /* GALERIA */
 
-.galeria
-{
+.galeria {
   margin-top: 35px;
 }
 
-.galeria .container h2
-{
+.galeria .container h2 {
   text-align: center;
 
   font-size: 45px;
 }
 
-.galeria .barra-separador
-{
+.galeria .barra-separador {
   background: #1f1510;
 
   margin: 25px 0;
@@ -1379,25 +1281,21 @@ h5 {
 
 /* COMENTÁRIOS */
 
-.comentarios-container
-{
+.comentarios-container {
   display: flex;
 
   flex-direction: column;
 }
 
-.comentarios-secao
-{
+.comentarios-secao {
   margin: 35px 0 0;
 }
 
-.header-comentario
-{
+.header-comentario {
   margin-bottom: 15px;
 }
 
-.header-comentario .barra-separador
-{
+.header-comentario .barra-separador {
   background: #1f1510;
 
   margin: 0;
@@ -1406,20 +1304,17 @@ h5 {
   height: 4px;
 }
 
-.header-comentario p
-{
+.header-comentario p {
   opacity: 50%;
 }
 
-.comentario-form
-{
+.comentario-form {
   width: 100%;
 
   margin-top: 25px;
 }
 
-.comentario-form textarea
-{
+.comentario-form textarea {
   resize: none;
 
   width: 100%;
@@ -1431,8 +1326,7 @@ h5 {
   border-bottom: 2px solid #1f1510;
 }
 
-.comentario-form button
-{
+.comentario-form button {
   margin: 5px 0;
 
   padding: 5px 10px;
@@ -1444,35 +1338,29 @@ h5 {
   color: #f2f3ff;
 }
 
-.comentarios-container .comentario
-{
+.comentarios-container .comentario {
   background: #1f1510;
 
   color: #f2f3ff;
 }
 
-.comentarios-container .comentario h3
-{
+.comentarios-container .comentario h3 {
   color: #f2f3ff;
 }
 
-.comentario-titulo
-{
+.comentario-titulo {
   padding: 10px 25px;
 }
 
-.comentario-titulo h3
-{
+.comentario-titulo h3 {
   margin: 0;
 }
 
-.comentario .barra-separador
-{
+.comentario .barra-separador {
   width: 100%;
 }
 
-.comentario-conteudo
-{
+.comentario-conteudo {
   padding: 15px 15px;
 
   overflow: scroll;
@@ -1480,22 +1368,19 @@ h5 {
   max-height: 290px;
 }
 
-.comentario-footer
-{
+.comentario-footer {
   display: flex;
 
   justify-content: space-between;
 }
 
-.comentario-denuncia
-{
+.comentario-denuncia {
   opacity: 70%;
 
   text-decoration: underline;
 }
 
-.comentario-autor
-{
+.comentario-autor {
   display: flex;
 
   flex-direction: column-reverse;
@@ -1503,22 +1388,19 @@ h5 {
   align-items: end;
 }
 
-.comentario-review
-{
+.comentario-review {
   color: #1f1510;
 
   font-weight: 900;
 }
 
-.like-dislike
-{
+.like-dislike {
   margin: 0 5px;
-  
+
   font-size: 20px;
 }
 
-.autor
-{
+.autor {
   background: #1f1510;
 
   color: #f2f3ff;
@@ -1528,8 +1410,7 @@ h5 {
 
 /* PÁGINA PRODUTOS */
 
-.overlay-produtos
-{
+.overlay-produtos {
   position: fixed;
   inset: 0;
 
@@ -1541,14 +1422,16 @@ h5 {
   z-index: 10;
 
   backdrop-filter: blur(0px);
-  background-color: rgba(0, 0, 0, 0.00);
+  background-color: rgba(0, 0, 0, 0);
 
-  transition: backdrop-filter 0.5s ease, background-color 0.5s ease;
+  transition:
+    backdrop-filter 0.5s ease,
+    background-color 0.5s ease;
 
   pointer-events: none;
 }
-.overlay-produtos.menu-pulled
-{
+
+.overlay-produtos.menu-pulled {
   display: block;
 
   backdrop-filter: blur(5px);
@@ -1557,8 +1440,7 @@ h5 {
   pointer-events: none;
 }
 
-.produtos-container .produtos
-{
+.produtos-container .produtos {
   overflow-x: visible;
   position: relative;
 
@@ -1575,27 +1457,22 @@ h5 {
   background: #402e25;
 }
 
-.produtos-container .jogo-card
-{
+.produtos-container .jogo-card {
   z-index: 9;
 }
-
-
 
 /* FILTROS */
 
 .categorias,
 .ordenar,
 .opcao,
-.faixa-tempo
-{
+.faixa-tempo {
   background: #1f1510;
 
   margin: 2px;
 }
 
-.categorias
-{
+.categorias {
   padding: 3px;
 
   overflow: scroll;
@@ -1611,8 +1488,7 @@ h5 {
   gap: 5px;
 }
 
-.categoria-card
-{
+.categoria-card {
   background: #000;
 
   border: 1px solid #f2f3ff;
@@ -1630,10 +1506,7 @@ h5 {
   align-items: center;
 }
 
-
-.filtros
-{
-
+.filtros {
   max-width: 400px;
 
   display: flex;
@@ -1653,30 +1526,25 @@ h5 {
   transition: transform 0.3s ease-in;
 }
 
-.filtros.menu-pulled
-{
+.filtros.menu-pulled {
   transform: translateX(0);
 }
 
-
-.checkbox
-{
+.checkbox {
   display: flex;
 
   align-items: center;
 }
 
-.checkbox input
-{
+.checkbox input {
   opacity: 0;
-  
+
   position: absolute;
   width: 0;
   height: 0;
 }
 
-.checkmark
-{
+.checkmark {
   display: block;
 
   width: 20px;
@@ -1687,32 +1555,28 @@ h5 {
   margin: 5px;
 }
 
-.checkbox input:checked + .checkmark
-{
+.checkbox input:checked+.checkmark {
   background: #f2f3ff;
 
   border: none;
 }
 
-.ordenar
-{
+.ordenar {
   padding: 3px;
-  
+
   display: flex;
   flex-direction: column;
 
   gap: 6px;
 }
 
-.ordenar-icone
-{
+.ordenar-icone {
   padding: 0 5px 0 0;
 
   font-size: 35px;
 }
 
-.ordenar-card
-{
+.ordenar-card {
   background: #000;
 
   border: 3px solid #f2f3ff;
@@ -1730,14 +1594,12 @@ h5 {
   display: flex;
 }
 
-.ordenar-card:hover
-{
+.ordenar-card:hover {
   background: #ff3845;
   color: #000;
 }
 
-.opcao
-{
+.opcao {
   color: #f2f3ff;
 
   padding: 10px;
@@ -1745,14 +1607,11 @@ h5 {
   padding-left: 5px;
 }
 
-.opcao p
-{
+.opcao p {
   text-align: left;
 }
 
-.campos
-{
-
+.campos {
   background: #1f1510;
 
   color: #f2f3ff;
@@ -1764,8 +1623,7 @@ h5 {
   padding: 3px;
 }
 
-.campos h4
-{
+.campos h4 {
   font-size: 18px;
   padding: 0 15px;
 
@@ -1775,8 +1633,7 @@ h5 {
   margin: 0;
 }
 
-.campos form
-{
+.campos form {
   display: flex;
 
   flex-direction: column;
@@ -1784,8 +1641,7 @@ h5 {
   align-items: center;
 }
 
-.campos input[type="date"]
-{
+.campos input[type="date"] {
   color: #f2f3ff;
 
   background: #000;
@@ -1794,8 +1650,7 @@ h5 {
   text-align: center;
 }
 
-.menu-pull
-{
+.menu-pull {
   position: absolute;
 
   height: 100px;
@@ -1829,30 +1684,13 @@ h5 {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* MEDIA QUERIES */
 
-@media (max-width: 767px)
-{
-  .rodape .logo
-  {
+@media (max-width: 767px) {
+  .rodape .logo {
     width: 100%;
   }
 }
-
-
-
 
 @media (min-width: 768px) {
   /* CABECALHO */
@@ -1864,60 +1702,52 @@ h5 {
 
   /* MAIS VENDIDO */
 
-  .jogo-card
-  {
+  .jogo-card {
     display: flex;
     height: 84px;
   }
 
-  .titulo-imagem
-  {
+  .titulo-imagem {
     max-width: 300px;
 
     object-fit: cover;
   }
 
-  .tags
-  {
+  .tags {
     display: flex;
 
     align-items: end;
   }
 
   /* OFERTAS */
-  .produtos-display .jogo-card
-  {
+  .produtos-display .jogo-card {
     display: block;
     height: auto;
   }
-  .produtos-display .jogo-detalhes
-  {
+
+  .produtos-display .jogo-detalhes {
     text-align: center;
   }
 
   /* RODAPÉ */
 
-  .container.superior
-  {
+  .container.superior {
     padding-bottom: 10px;
   }
 
-  .texto
-  {
+  .texto {
     margin: auto 0;
 
     text-align: left;
   }
 
-  .rodape .logo
-  {
+  .rodape .logo {
     max-width: 100%;
 
     display: block;
   }
 
-  .rodape .logo img
-  {
+  .rodape .logo img {
     width: 60%;
 
     margin: 0 auto;
@@ -1925,18 +1755,15 @@ h5 {
     display: block;
   }
 
-  .container.inferior
-  {
+  .container.inferior {
     padding-top: 10px;
   }
 
-  .inferior .links
-  {
+  .inferior .links {
     padding: 0;
   }
 
-  .inferior .links ul
-  {
+  .inferior .links ul {
     flex-direction: row;
 
     padding: 0;
@@ -1944,13 +1771,11 @@ h5 {
     height: 100%;
   }
 
-  .inferior .links li a
-  {
+  .inferior .links li a {
     font-size: 12px;
   }
 
-  .inferior .sociais
-  {
+  .inferior .sociais {
     display: flex;
 
     padding: 0;
@@ -1962,29 +1787,23 @@ h5 {
 
   /* PÁGINA PRODUTO */
 
-  .produto-intro .row
-  {
+  .produto-intro .row {
     flex-direction: row;
   }
 
-  .btn-compra
-  {
+  .btn-compra {
     width: 50%;
   }
 
   /* FILTRO */
 
-  
-
-  .faixa-tempo form
-  {
+  .faixa-tempo form {
     flex-direction: row;
 
     justify-content: space-evenly;
 
     padding: 15px;
   }
-
 }
 
 @media (min-width: 1024px) {
@@ -2015,30 +1834,31 @@ h5 {
   }
 
   /* MAIS VENDIDO */
-  .jogo-card
-  {
-    background: linear-gradient(100deg,rgba(31, 21, 16, 1) 95%, rgba(255, 255, 255, 0) 95%);
+  .jogo-card {
+    background: linear-gradient(100deg,
+        rgba(31, 21, 16, 1) 95%,
+        rgba(255, 255, 255, 0) 95%);
 
     box-shadow: none;
   }
 
-  .jogo-card::after
-  {
-    content: '';
+  .jogo-card::after {
+    content: "";
     position: absolute;
 
     inset: 0;
 
     z-index: -1;
 
-    background: linear-gradient(100deg,rgba(31, 21, 16, 1) 47%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(100deg,
+        rgba(31, 21, 16, 1) 47%,
+        rgba(255, 255, 255, 0) 100%);
     filter: blur(5px);
 
     transform: translate(0, 10px);
   }
 
-  .review-estrela
-  {
+  .review-estrela {
     bottom: 0;
     right: -1%;
 
@@ -2048,46 +1868,37 @@ h5 {
 
     width: 125px;
     height: 125px;
-
   }
 
-  .review-estrela img
-  {
+  .review-estrela img {
     width: 125px;
   }
 
-  .review-nota
-  {
+  .review-nota {
     font-size: 30px;
   }
 
   /* DISPLAY DE PRODUTOS (HORIZONTAL) */
-  .produtos-display .produtos
-  {
+  .produtos-display .produtos {
     position: static;
   }
 
-  .produtos-display .jogo-card
-  {
+  .produtos-display .jogo-card {
     background: #1f1510;
   }
 
-  .produtos-display .jogo-card
-  {
+  .produtos-display .jogo-card {
     background: #1f1510;
 
     box-shadow: 0 0 8px 1px #1f1510;
   }
 
-  .produtos-display .jogo-card::after
-  {
+  .produtos-display .jogo-card::after {
     display: none;
   }
 
   /* RODAPÉ */
-  .rodape .inferior .links li
-  {
-    
+  .rodape .inferior .links li {
     display: flex;
 
     align-items: center;
@@ -2097,9 +1908,8 @@ h5 {
     gap: 15px;
   }
 
-  .rodape .links li::after
-  {
-    content: '';
+  .rodape .links li::after {
+    content: "";
 
     display: block;
 
@@ -2113,20 +1923,17 @@ h5 {
 
   /* PRODUTO INTRO */
 
-  .jogo-detalhes-pro .dev
-  {
+  .jogo-detalhes-pro .dev {
     text-align: start;
   }
 
-  .jogo-detalhes-pro .jogo-avaliacoes
-  {
+  .jogo-detalhes-pro .jogo-avaliacoes {
     justify-content: start;
 
     gap: 5px;
   }
 
-  .jogo-preco .preco-atual
-  {
+  .jogo-preco .preco-atual {
     text-align: left;
 
     font-size: 35px;
@@ -2136,6 +1943,4 @@ h5 {
 
     margin: 0;
   }
-
-
 }
