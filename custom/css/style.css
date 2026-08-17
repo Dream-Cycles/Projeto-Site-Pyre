@@ -27,13 +27,17 @@ p {
 body {
   font-family: "Encode Sans", sans-serif;
 
-  background: #ddd0d0;
+  background: #0e0d0d;
 }
 
 :root {
   --seloffset: 0;
 
   --selSize: 0;
+
+  --corPrincipal: #252427;
+  --corBorda: #777080;
+  --brilhoBorda: #646069;
 }
 
 h1,
@@ -45,35 +49,39 @@ h5 {
 }
 
 .icone-importante {
-  color: #ff3845;
+  color: #d1c4ec;
 
   font-size: 30px;
 }
 
 /* CABEÇALHO */
 
-.cabecalho .navbar {
+#cabecalho .navbar {
   position: relative;
 
   z-index: 1;
 
-  background: #1f1510;
+  background-color: color-mix(in srgb, var(--corPrincipal) 50%, transparent);;
+
+  border: 1px solid var(--corBorda);
+
+  border-radius: 10px;
+  
+  /* box-shadow: 0 0 4px var(--brilhoBorda); */
 }
 
-.cabecalho .logo {
+#cabecalho .logo {
   width: 50px;
 }
 
-.login {
+#cabecalho .login
+{
   font-size: 25px;
 
   font-weight: 600;
 
   text-align: center;
-}
 
-.cabecalho .login
-{
   width: 100%;
 
   display: flex;
@@ -85,7 +93,7 @@ h5 {
   font-size: 40px;
 }
 
-.cabecalho .login i
+#cabecalho .login i
 {
   color: #f2f3ff;
 
@@ -102,19 +110,15 @@ h5 {
 }
 
 .pesquisa-form {
-  position: absolute;
-  top: 0;
-  left: 0;
+  /* position: absolute; */
 
-  width: 100vw;
+  /* width: 100vw; */
   height: 40px;
 
   transform: translateY(0);
   transform-origin: center;
 
   transition: transform 0.3s ease-in-out;
-
-  z-index: 0;
 }
 
 .pesquisa-form.clicked {
@@ -242,30 +246,37 @@ h5 {
 }
 
 /* PESQUISA (DESKTOP) */
-.botao-pesquisar button {
+#botao-pesquisa {
   border: none;
   outline: none;
-  background: none;
   -webkit-appearance: none;
   appearance: none;
-
-  background: #fff;
   height: 40px;
+
+  background: transparent;
 }
 
-.botao-pesquisar .icone-importante {
-  font-size: 25px;
+#botao-pesquisa .icone-importante {
+  font-size: 2.3vw;
+}
+#pesquisa-body
+{
+  background: #4f4c53;
+  height: 40px;
+  overflow: hidden;
+
+  border-radius: 5px;
 }
 
-.desktop-pesquisa-form input {
+.pesquisa-input {
   border: none;
   font: inherit;
-
-  background: #fff;
   height: 40px;
+
+  background: transparent;
 }
 
-.desktop-pesquisa-form input:focus {
+.pesquisa-form input:focus {
   border: none;
   outline: none;
 }
@@ -926,6 +937,94 @@ h5 {
   margin-bottom: 35px;
 }
 
+/* CONTATO */
+.secao-contato {
+    background: #1f1510;
+    padding: 80px 40px;
+    color: #d8d8d8;
+    font-family: sans-serif;
+}
+
+.container-contato {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 80px;
+}
+
+.informacoes-contato h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.informacoes-contato h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #ff2b3e;
+    margin-top: 12px;
+}
+
+.informacoes-contato p {
+    color: #9a9a9a;
+    line-height: 1.8;
+}
+
+.formulario-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-campo label {
+    color: #cfcfcf;
+    margin-bottom: 8px;
+    font-size: .9rem;
+    letter-spacing: .5px;
+}
+
+.grupo-campo input,
+.grupo-campo textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,.2);
+    color: white;
+    padding: 12px 0;
+    font-size: 1rem;
+    transition: .3s;
+}
+
+.grupo-campo input:focus,
+.grupo-campo textarea:focus {
+    outline: none;
+    border-color: #ff2b3e;
+}
+
+.botao-enviar {
+    align-self: flex-start;
+    background: transparent;
+    color: #ff2b3e;
+    border: 1px solid #ff2b3e;
+    padding: 14px 30px;
+    cursor: pointer;
+    transition: .3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.botao-enviar:hover {
+    background: #ff2b3e;
+    color: white;
+}
+
 /* INTRO */
 
 .informacoes {
@@ -1480,7 +1579,7 @@ h5 {
 
   flex-wrap: wrap;
 
-  justify-content: space-evenly;
+  justify-content: start;
 
   gap: 30px;
 
@@ -1815,6 +1914,11 @@ h5 {
     margin: 0;
 
     align-items: center;
+  }
+
+  .container-contato {
+        grid-template-columns: 1fr;
+        gap: 50px;
   }
 
   /* PÁGINA PRODUTO */

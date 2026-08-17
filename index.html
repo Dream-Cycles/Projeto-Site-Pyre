@@ -41,9 +41,9 @@
 <body>
   <!-- CABEÇALHO -->
 
-  <header class="cabecalho">
+  <header id="cabecalho" class="mx-5">
     <div class="navbar navbar-expand">
-      <div class="container-fluid px-3 d-flex justify-content-center">
+      <div class="container-fluid px-3 d-flex justify-content-center mx-1">
         <div class="row w-100">
           <!-- LOGO -->
 
@@ -53,28 +53,27 @@
             </div>
           </div>
 
-          <div class="col-4 col-md-8 d-flex justify-content-center">
+          <div class="col-4 col-md-8 d-flex justify-content-center align-items-center">
             <!-- BOTÃO DE PESQUISA -->
 
-            <button id="botao-pesquisa" class="btn" type="button" data-bs-toggle="collapse"
+            <!-- <button id="botao-pesquisa" class="btn" type="button" data-bs-toggle="collapse"
               data-bs-target="#barra-pesquisa">
               <i class="fa-solid fa-magnifying-glass icone-importante"></i>
-            </button>
+            </button> -->
 
             <!-- FORM DE PESQUISA (DESKTOP) -->
 
-            <div class="row w-100 d-none d-md-flex">
-              <div class="col-1 p-0">
-                <div class="botao-pesquisar h-100 d-flex align-items-center justify-content-end">
-                  <button type="submit">
-                    <i class="fa-solid fa-magnifying-glass icone-importante"></i>
+            <div id="pesquisa-body" class="col-6 d-none d-md-flex">
+              
+                <div id="botao-pesquisa-body" class="col-2 h-100 d-flex align-items-center justify-content-center">
+                  <button id="botao-pesquisa" type="submit" class="d-flex align-items-center">
+                    <i class="fa-solid fa-magnifying-glass icone-importante img-fluid"></i>
                   </button>
                 </div>
-              </div>
 
-              <div class="col-11 p-0">
-                <form class="desktop-pesquisa-form h-100 d-flex align-items-center" action="#">
-                  <input type="text" name="pesquisa" class="pesquisa-input w-100" />
+              <div class="col-10 p-0">
+                <form class="pesquisa-form h-100 d-flex align-items-center" action="#">
+                  <input type="text" name="pesquisa" class="pesquisa-input" />
                 </form>
               </div>
             </div>
@@ -104,9 +103,9 @@
 
     <!-- FORM DE PESQUISA (MOBILE) -->
 
-    <form class="pesquisa-form d-flex">
+    <!-- <form class="pesquisa-form d-flex">
       <input type="text" id="pesquisa-texto" class="h-100 border-0" />
-    </form>
+    </form> -->
 
     <!-- MENU -->
 
@@ -296,9 +295,6 @@
 
             <h2 class="opcao m-0">Mais Aguardados</h2>
 
-            <h2 class="opcao m-0">Mais bem avaliados</h2>
-
-            <h2 class="opcao m-0">Favoritos</h2>
           </div>
         </div>
         <div class="produtos">
@@ -708,6 +704,49 @@
       </div>
     </div>
   </footer>
+
+  <section class="secao-contato">
+    <div class="container-contato">
+
+        <div class="informacoes-contato">
+            <h2>Entre em Contato</h2>
+
+            <p>
+                Tem alguma dúvida, sugestão ou feedback?
+                Envie uma mensagem e retornaremos o mais breve possível.
+            </p>
+        </div>
+
+        <form class="formulario-contato">
+
+            <div class="grupo-campo">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome">
+            </div>
+
+            <div class="grupo-campo">
+                <label for="email">E-mail</label>
+                <input type="email" id="email">
+            </div>
+
+            <div class="grupo-campo">
+                <label for="assunto">Assunto</label>
+                <input type="text" id="assunto">
+            </div>
+
+            <div class="grupo-campo">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" rows="5"></textarea>
+            </div>
+
+            <button type="submit" class="botao-enviar">
+                Enviar Mensagem
+            </button>
+
+        </form>
+
+    </div>
+</section>
 
   <!-- BOOTSTRAP JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
